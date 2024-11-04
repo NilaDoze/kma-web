@@ -29,8 +29,11 @@ section {
 
 /*CAROUSEL*/
 
+.carousel {
+    margin-top: 96px;
+}
 .m-item {
-    height: calc(100vh - 97px);
+    height: calc(100vh - 96px);
 }
 .m-img {
     object-fit: cover;
@@ -38,6 +41,22 @@ section {
     filter: brightness(0.6);
 }
 
+.star_img {
+    height: 30px;
+    width: auto; 
+}
+
+/* Mobile screens (750px and below) */
+@media screen and (max-width: 1126px) {
+    .m-item {
+        height: 100%;
+    }
+    .m-img {
+        object-fit: cover;
+    }  
+}
+
+/*BLOGS*/
 
 .col {
     cursor: pointer;
@@ -47,6 +66,8 @@ section {
 .col:hover {
     transform: scale(1.04);   
 }
+
+/*AUDIO*/
 
 /* Style for WebKit browsers (Chrome, Safari) */
 input[type="range"] {
