@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("Images/home_bg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    animation-play-state: paused; /* Pauses the GIF by default */
+}
+
+.logo:hover {
+    animation-play-state: running; /* Plays GIF on hover */
+}
+
+section {
+    background-color: rgb(20, 20, 20); 
+    height: 100vh;
+    flex: 1;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/      
+}
+
+/*CAROUSEL*/
+
+.m-item {
+    height: calc(100vh - 97px);
+}
+.m-img {
+    object-fit: cover;
+    height: 100%;
+    filter: brightness(0.6);
+}
+
+
+.col {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.col:hover {
+    transform: scale(1.04);   
+}
+
+/* Style for WebKit browsers (Chrome, Safari) */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling */
+    width: 100%; /* Full width */
+    height: 10px; /* Height of the slider */
+    background: #000; /* Track background color set to black */
+    border-radius: 5px; /* Rounded corners for the track */
+    box-shadow: white 0 0 10px;
+}
+
+/* Style for the slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%; /* Make it round */
+    box-shadow: white 0 0 10px;
+    background: #000; /* Color of the thumb set to black */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Style for Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%; /* Make it round */
+    box-shadow: white 0 0 10px;
+    background: #000; /* Color of the thumb set to black */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Style for the track in Firefox */
+input[type="range"]::-moz-range-track {
+    background: #000; /* Track background color set to black */
+    border-radius: 5px; /* Rounded corners for the track */
+    box-shadow: white 0 0 10px;
+}
+
+/* Optional: Style for the track in Microsoft Edge */
+input[type="range"]::-ms-track {
+    width: 100%; /* Full width */
+    height: 10px; /* Height of the slider */
+    background: transparent; /* Background color */
+    border-color: transparent; /* No border */
+    color: #000; /* Track color set to black */
+    box-shadow: white 0 0 10px;
+}
+
+/* Style for the slider thumb in Microsoft Edge */
+input[type="range"]::-ms-thumb {
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    border-radius: 50%; /* Make it round */
+    box-shadow: white 0 0 10px;
+    background: #000; /* Color of the thumb set to black */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/*FOOTER*/
+
+footer {
+    background: black;
+    color: rgba(177, 172, 172, 0.438);
+    padding: 20px;
+    text-align: center;
+}
+footer .social_media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+footer .instagram_logo {
+    background-image: url("Images/instagram.png");
+    background-repeat: none;
+    background-size: contain;
+    margin: 0.5%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999999px;
+}
+footer .discord_logo {
+    background-image: url("Images/discord.png");
+    background-repeat: none;
+    background-size: contain;
+    margin: 0.5%;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999999px;
+}
