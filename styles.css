@@ -15,18 +15,13 @@ section {
     flex: 1;  
 }
 
-
-
 blog {
     background-color: rgb(14, 14, 14); 
     height: 100vh;
     flex: 1;
     padding: 5% 30%;
 }
-features {
-    background-image: url();
-    background-color: rgb(14, 14, 14);
-}
+
 
 /*DIVS*/
 .box {
@@ -45,24 +40,9 @@ features {
 
 /*EFFECTS*/
 
-features, .carousel_section {
+.carousel_section {
     position: relative; /* Ensures positioning context for the gradient */
 }
-
-/* Gradient for Features 
-features::after, .carousel_section::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 0; Height of the gradient shadow
-    pointer-events: none; Ensure it doesn't interfere with interaction
-}*/
-
-/* Specific Gradient for .features 
-.features::after {
-    top: 0;
-    background: linear-gradient(to bottom, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0));
-}*/
 
 /* Specific Gradient for .carousel_section */
 .carousel_section::after{
@@ -91,29 +71,10 @@ features::after, .carousel_section::after {
 }
 
 
-.bio {
-    text-align: justify;
-}
 
 /*FEATURES*/
 
-.feature_column {
-    border: 1px solid; /* Define the border (style, width, and color if needed) */
-    border-radius: 0.75rem; /* Matches Bootstrap's `rounded-3` */
-    padding: 1rem; /* Matches `p-3` (1 rem = 16px) */
-    margin: 0.25rem; /* Matches `m-1` */
-    min-height: 200px;
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column; /* Stacks content vertically */
-    justify-content: flex-end; /* Pushes content to the bottom */
-    align-items: flex-start; /* Aligns content to the left */
-    text-align: left; /* Ensures text aligns left */
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.feature_column p {
-    margin: 0;
-}
+
 
 
 /*IMAGES*/
