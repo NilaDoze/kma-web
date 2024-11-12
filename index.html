@@ -41,91 +41,86 @@
     </nav>
 
 
-    <main>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <main class="carousel_section">
+        <div id="carouselMainMenu" class="carousel slide" data-bs-ride="true">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselMainMenu" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselMainMenu" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselMainMenu" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+
             <div class="carousel-inner">
-              <div class="carousel-item active m-item">
-                <img src="Images/arcane2.png" class="d-block w-100 m-img" alt="arcane">
-              </div>
-              <div class="carousel-item m-item">
-                <img src="Images/arcane2.png" class="d-block w-100 m-img" alt="...">
-              </div>
-              <div class="carousel-item m-item">
-                <img src="Images/arcane2.png" class="d-block w-100 m-img" alt="...">
-              </div>
+                <div class="carousel-item active m-item">
+                    <img src="Images/arcane2.png" class="d-block w-100 m-img" alt="arcane">
+                </div>
+                <div class="carousel-item m-item">
+                    <img src="Images/arcane2.png" class="d-block w-100 m-img" alt="...">
+                </div>
+                <div class="carousel-item m-item">
+                    <img src="Images/arcane2.png" class="d-block w-100 m-img" alt="...">
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </main>
 
-    <section class="pt-5">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMainMenu" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
 
-        <div class="container text-center p-5">
-            <img src="Images/star.png" class="star_img mb-4" alt="star">
-            <p class="fs-1 text-white text-uppercase"><strong>¡Welcome!</strong></p>
-            <p class="fs-6 m-0 text-white">KMA'S DOMAIN</p>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselMainMenu" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
-        <div class="container text-center text-white p-5">
-            <div class="row">
-                <div class="col-12 col-md-4 mb-5">
-                    <img src="Images/streaming.png" class="pb-4">
-                    <h4>Streaming</h4>
-                    <p class="text-secondary">Watch the latest movies and shows on release without spending a dime! Join us for free streaming events.</p>
-                </div>
-                <div class="col-12 col-md-4 mb-5">
-                    <img src="Images/gaming.png" class="pb-4">
-                    <h4>Gaming</h4>
-                    <p class="text-secondary">Weekly gaming sessions with the fam! From competitive to casual gaming.</p>
-                </div>
-                <div class="col-12 col-md-4 mb-5">
-                    <img src="Images/rewards.png" class="pb-4">
-                    <h4>Rewards</h4>
-                    <p class="text-secondary">Stay on the lookout for exciting giveaways and earn exclusive badges and roles for your achievements!</p>
-                </div>
-            </div>
-          </div>
+        <div class="gradient_transition"></div>
+    </main>
 
-    </section>
-
-    <section class="p-5 text-white text-center">
-        <div class="px-5">
-            <audio id="audio" autoplay loop>
-                <source src="Music/Bilionera.mp3" type="audio/mpeg">
-            </audio>
-            <div class="home_volume">
-                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="0" />
-                <label for="volumeControl">Volume</label>
+    <section class="pt-5 px-2 section_bio">
+        <div class="box container text-center bg-black">
+            <div class="inner_box p-5">
+                <p class="fs-1 text-white text-uppercase mb-1"><strong>¡Welcome!</strong></p>
+                <p class="fs-6 m-0 text-white">KMA'S DOMAIN</p>
+                <p class="text-secondary pt-5 bio">Honestly? Adulting sucks, we all know it. So... who are we trying to fool? At the end of the day, we’re just a bunch of kids trying to figure life out. Which, turns out, is exactly why I created this place—to serve as a reminder that no matter how old we get, we all have a little child inside, eagerly waiting for the chance to smile. So take a break, enjoy, and remember: you've been hard enough on yourself. But if for some reason you can’t say you’re proud, just know that I’m proud of you. Always. Have a wonderful day, and keep moving along—you’ve got this! And if you don't—you’ve got us!</p>
+                <img src="Images/star.png" class="star_img mt-5" alt="star">
             </div>
         </div>
     </section>
 
-    <script>
-        const volumeControl = document.getElementById('volumeControl');
-        const audio = document.getElementById('audio');
+    <features class="pt-5 pb-5 px-2">
+        <div class="container features text-left text-white">
+            <div class="row align-items-start">
 
-        // Set the initial volume
-        audio.volume = volumeControl.value;
+                <div class="col feature_column feature_bg_gaming">
+                    <div class="d-flex">
+                        <h3>GAMING</h3>
+                        <img src="Images/gaming.png" class="feature_img">
+                    </div>
+                    <p>EXPLORE</p>
+                </div>
+                <div class="col feature_column feature_bg_rewards">
+                    <div class="d-flex">
+                        <h3>REWARDS</h3>
+                        <img src="Images/rewards.png" class="feature_img">
+                    </div>
+                    <p>EXPLORE</p>
+                </div>
+            </div>
 
-        // Update audio volume when the slider changes
-        volumeControl.addEventListener('input', function() {
-            audio.volume = this.value; // Set audio volume to slider value
-        });
-    </script>
+            <div class="row align-items-start">
 
+                <div class="col feature_column feature_bg_streams">
+                    <div class="d-flex">
+                        <h3>STREAMS</h3>
+                        <img src="Images/streams.png" class="feature_img">
+                    </div>
+                    <p>NEW IN: ARCANE | SEASON 2</p>
+
+                </div>
+            </div>
+        </div>       
+    </features>
     <footer>
+
         <div class="footer_content">
             <div class="social_media"> 
                 <a href="https://discord.gg/6RNdcMWrdq" class="discord_logo">Discord</a>

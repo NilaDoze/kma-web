@@ -9,29 +9,78 @@ body {
     background-position: center;
 }
 
-.logo {
-    animation-play-state: paused; /* Pauses the GIF by default */
-}
-
-.logo:hover {
-    animation-play-state: running; /* Plays GIF on hover */
-}
-
 section {
-    background-color: rgb(20, 20, 20); 
+    background-color: rgb(14, 14, 14); 
+    height: 100vh;
+    flex: 1;  
+}
+
+
+
+blog {
+    background-color: rgb(14, 14, 14); 
     height: 100vh;
     flex: 1;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;*/      
+    padding: 5% 30%;
 }
+features {
+    background-image: url();
+    background-color: rgb(14, 14, 14);
+}
+
+/*DIVS*/
+.box {
+    border-radius: 10px; /* Rounded corners */
+    background: linear-gradient(to right, rgb(218, 15, 83), rgb(54, 10, 175)); /* Gradient background */
+    padding: 1px 2px;  
+    display: flex;
+
+}
+
+.inner_box {
+    border-radius: 10px; /* Match inner corners */
+    background: black; /* Background of the inner box */
+    
+}
+
+/*EFFECTS*/
+
+features, .carousel_section {
+    position: relative; /* Ensures positioning context for the gradient */
+}
+
+/* Gradient for Features 
+features::after, .carousel_section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0; Height of the gradient shadow
+    pointer-events: none; Ensure it doesn't interfere with interaction
+}*/
+
+/* Specific Gradient for .features 
+.features::after {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0));
+}*/
+
+/* Specific Gradient for .carousel_section */
+.carousel_section::after{
+    content: ""; /* Required for the ::after to render */
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Cover the full width of the parent */
+    height: 20px; /* Adjust height as needed */
+    background: linear-gradient(to top, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Gradient */
+}
+
 
 /*CAROUSEL*/
 
 .carousel {
-    margin-top: 96px;
+    margin-top: 96px; 
 }
+
 .m-item {
     height: calc(100vh - 96px);
 }
@@ -41,10 +90,58 @@ section {
     filter: brightness(0.6);
 }
 
+
+.bio {
+    text-align: justify;
+}
+
+/*FEATURES*/
+
+.feature_column {
+    border: 1px solid; /* Define the border (style, width, and color if needed) */
+    border-radius: 0.75rem; /* Matches Bootstrap's `rounded-3` */
+    padding: 1rem; /* Matches `p-3` (1 rem = 16px) */
+    margin: 0.25rem; /* Matches `m-1` */
+    min-height: 200px;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: flex-end; /* Pushes content to the bottom */
+    align-items: flex-start; /* Aligns content to the left */
+    text-align: left; /* Ensures text aligns left */
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.feature_column p {
+    margin: 0;
+}
+
+
+/*IMAGES*/
+
+.feature_img {
+    height: 30px;
+    width: auto;
+    margin-left: 10px;
+}
+
 .star_img {
     height: 30px;
     width: auto; 
 }
+
+
+.feature_bg_gaming {
+    background-image: url(Images/gaming_bg.gif);
+}
+
+.feature_bg_rewards {
+    background-image: url(Images/rewards_bg.gif);
+}
+
+.feature_bg_streams {
+    background-image: url(Images/streaming_bg.gif);
+}
+
 
 /* Mobile screens (750px and below) */
 @media screen and (max-width: 1126px) {
@@ -53,7 +150,12 @@ section {
     }
     .m-img {
         object-fit: cover;
-    }  
+    } 
+    
+    
+}
+@media screen and (max-width: 767px) {
+
 }
 
 /*BLOGS*/
