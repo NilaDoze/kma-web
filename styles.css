@@ -82,7 +82,7 @@ blog {
 .feature_img {
     height: 30px;
     width: auto;
-    margin-left: 10px;
+    margin: 0 10px;
 }
 
 .star_img {
@@ -116,14 +116,28 @@ blog {
     
 }
 @media screen and (max-width: 767px) {
-
+    .bio {
+        text-align: justify;
+    }
 }
 
 /*BLOGS*/
 
-.col {
+.feature_column {
     cursor: pointer;
     transition: transform 0.2s;
+    border: 1px solid; /* Define the border (style, width, and color if needed) */
+    border-radius: 0.75rem; /* Matches Bootstrap's `rounded-3` */
+    padding: 1rem; /* Matches `p-3` (1 rem = 16px) */
+    margin: 0.25rem; /* Matches `m-1` */
+    min-height: 200px;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: flex-end; /* Pushes content to the bottom */
+    align-items: flex-start; /* Aligns content to the left */
+    text-align: left; /* Ensures text aligns left */
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .col:hover {
