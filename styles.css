@@ -14,13 +14,24 @@ section {
     background-color: rgb(14, 14, 14); 
     height: 100vh;
     flex: 1;  
+    
 }
 
 blog {
     background-color: rgb(14, 14, 14); 
     height: 100vh;
     flex: 1;
-    padding: 5% 30%;
+    padding: 5% 30%; 
+}
+
+blog_m {
+    background-color: rgb(14, 14, 14); 
+    height: 100vh;
+    flex: 1  
+}
+
+.carousel, blog_m, blog {
+    margin-top: 96px;
 }
 
 
@@ -40,6 +51,10 @@ blog {
 }
 
 /*EFFECTS*/
+
+.audio_img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
 
 
 .carousel_section {
@@ -69,7 +84,7 @@ blog {
 .m-img {
     object-fit: cover;
     height: 100%;
-    filter: brightness(0.6);
+    /*filter: brightness(0.6);*/
 }
 
 
@@ -80,6 +95,19 @@ blog {
 
 
 /*IMAGES*/
+
+.panda_img {
+    height: 80px;
+    width: auto; 
+    
+}
+
+.audio_img {
+    height: 30px;
+    width: 60px; 
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 
 .feature_img {
     height: 30px;
@@ -125,7 +153,7 @@ blog {
         padding: 6% 5%;
     }
 }
-@media screen and (max-width: 1126px) {
+@media screen and (max-width: 1600px) {
     .m-item {
         height: 100%;
     }
@@ -141,24 +169,37 @@ blog {
 }
 
 /*BLOGS*/
+
+.profile_text {
+color: rgb(116, 116, 116);
+}
+
+.blog_subtitle, .blog_text, .blog_parter, .profile_text, .bio_text {
+    font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
+}
+
 .blog_parter {
     margin-bottom: 4%; 
     font-weight: 750;
-    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    
 }
 
 .blog_subtitle {
     margin-bottom: 2%;
+    color: rgb(255, 255, 255);
     
 }
 .blog_text{
     margin-bottom: 10%;
     font-weight: 370;
     line-height: 1.6;
+    color: rgb(212, 212, 212);
 }
 
 .blog_title {
     font-size: 50px;
+    color: rgb(255, 255, 255);
 }
 
 /*HOMEPAGE*/
@@ -262,7 +303,7 @@ footer .social_media {
 footer .instagram_logo {
     background-image: url("Images/instagram.png");
     background-repeat: none;
-    background-size: contain;
+    background-size: cover;
     margin: 0.5%;
     display: inline-block;
     width: 30px;
@@ -272,7 +313,7 @@ footer .instagram_logo {
 footer .discord_logo {
     background-image: url("Images/discord.png");
     background-repeat: none;
-    background-size: contain;
+    background-size: cover;
     margin: 0.5%;
     display: inline-block;
     width: 32px;
