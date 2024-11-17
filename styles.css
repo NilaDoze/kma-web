@@ -10,42 +10,37 @@ body {
     
 }
 
-section {
-    background-color: rgb(14, 14, 14); 
-    height: 100vh;
-    flex: 1;  
-    
-}
-
-blog {
+section, blog, blog_m {
     background-color: rgb(14, 14, 14); 
     height: 100vh;
     flex: 1;
-    padding: 5% 30%; 
 }
 
-blog_m {
-    background-color: rgb(14, 14, 14); 
-    height: 100vh;
-    flex: 1  
-}
-
-main {
+carousel {
     background-color: #000;
 }
 
+blog_m {
+    padding: 1.25rem;
+}
+
+blog {
+    padding: 5% 30%; 
+}
+
+
+/*Nav displacement*/
 .carousel, blog_m, blog {
     margin-top: 96px;
 }
 
 
-/*DIVS*/
+/*HOMEPAGE*/
 .box {
     border-radius: 10px; /* Rounded corners */
     background: linear-gradient(to right, rgb(218, 15, 83), rgb(54, 10, 175)); /* Gradient background */
     padding: 1px 2px;  
     display: flex;
-
 }
 
 .inner_box {
@@ -54,18 +49,43 @@ main {
     
 }
 
-/*EFFECTS*/
-
-.audio_img:hover {
-    transform: scale(1.1); /* Slight zoom effect */
+.feature_column {
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid; /* Define the border (style, width, and color if needed) */
+    border-radius: 0.75rem; /* Matches Bootstrap's `rounded-3` */
+    padding: 1rem; /* Matches `p-3` (1 rem = 16px) */
+    margin: 0.25rem; /* Matches `m-1` */
+    min-height: 200px;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: flex-end; /* Pushes content to the bottom */
+    align-items: flex-start; /* Aligns content to the left */
+    text-align: left; /* Ensures text aligns left */
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
+.col:hover {
+    transform: scale(1.04);   
+}
+
+/*BLOGPAGE*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between the cards */
+    justify-content: center; /* Center align cards */
+}
+
+
+/*EFFECTS*/
 
 .carousel_section {
     position: relative; /* Ensures positioning context for the gradient */
 }
 
-/* Specific Gradient for .carousel_section */
+/* Gradient Bottom .carousel_section */
 .carousel_section::after{
     content: ""; /* Required for the ::after to render */
     position: absolute;
@@ -73,6 +93,10 @@ main {
     width: 100%; /* Cover the full width of the parent */
     height: 20px; /* Adjust height as needed */
     background: linear-gradient(to top, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Gradient */
+}
+
+.audio_img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 
@@ -101,12 +125,6 @@ main {
 
 /*IMAGES*/
 
-.panda_img {
-    height: 80px;
-    width: auto; 
-    
-}
-
 .audio_img {
     height: 30px;
     width: 60px; 
@@ -118,6 +136,18 @@ main {
     height: 30px;
     width: auto;
     margin: 0 10px;
+}
+
+.feature_bg_gaming {
+    background-image: url(Images/gaming_bg.gif);
+}
+
+.feature_bg_rewards {
+    background-image: url(Images/rewards_bg.gif);
+}
+
+.feature_bg_streams {
+    background-image: url(Images/streaming_bg.gif);
 }
 
 .star_img {
@@ -139,62 +169,48 @@ main {
     border-radius: 10px;
 }
 
-.feature_bg_gaming {
-    background-image: url(Images/gaming_bg.gif);
-}
-
-.feature_bg_rewards {
-    background-image: url(Images/rewards_bg.gif);
-}
-
-.feature_bg_streams {
-    background-image: url(Images/streaming_bg.gif);
-}
-
 
 /*BLOGS*/
+
+.bio_text, .profile_text, .blog_subtitle, .blog_text, .blog_parter {
+    font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
+}
 
 .profile_text {
     color: rgb(116, 116, 116);
     }
     
-    .blog_subtitle, .blog_text, .blog_parter, .profile_text, .bio_text {
-        font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
-    }
     
-    .blog_parter {
-        margin-bottom: 4%; 
-        font-weight: 750;
-        color: rgb(255, 255, 255);
+    
+.blog_parter {
+    margin-bottom: 4%; 
+    font-weight: 750;
+    color: rgb(255, 255, 255);
         
-    }
-    
-    .blog_subtitle {
-        margin-bottom: 2%;
-        color: rgb(255, 255, 255);
-        
-    }
-    .blog_text{
-        margin-bottom: 10%;
-        font-size: 1.25rem;
-        font-weight: 370;
-        line-height: 1.6;
-        color: rgb(212, 212, 212);
-    }
-    
-    .blog_title {
-        font-size: 50px;
-        color: rgb(255, 255, 255);
-    }
-
-
-
-/* Mobile screens (750px and below) */
-@media screen and (max-width: 1300px) {
-    blog {
-        padding: 6% 5%;
-    }
 }
+    
+.blog_subtitle {
+    margin-bottom: 2%;
+    color: rgb(255, 255, 255);
+        
+}
+
+.blog_text{
+    margin-bottom: 10%;
+    font-size: 1.25rem;
+    font-weight: 370;
+    line-height: 1.6;
+    color: rgb(212, 212, 212);
+}
+    
+.blog_title {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+
+/* MEDIA*/
+
 @media screen and (max-width: 1600px) {
     .m-item {
         height: 100%;
@@ -203,40 +219,32 @@ main {
         object-fit: cover;
     } 
 }
+
+@media screen and (max-width: 1300px) {
+    blog {
+        padding: 6% 5%;
+    }
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        padding: 0 10%;
+      }
+}
+
 @media screen and (max-width: 767px) {
     .bio {
         text-align: justify;
     }
+    blog_m {
+        padding:  1rem;
+    }
+    .card-container {
+        padding: 0 2%;
+      }
     .blog_text {
         font-size: 1.15rem;
-    }
-    
+    }  
 }
 
-
-
-/*HOMEPAGE*/
-
-.feature_column {
-    cursor: pointer;
-    transition: transform 0.2s;
-    border: 1px solid; /* Define the border (style, width, and color if needed) */
-    border-radius: 0.75rem; /* Matches Bootstrap's `rounded-3` */
-    padding: 1rem; /* Matches `p-3` (1 rem = 16px) */
-    margin: 0.25rem; /* Matches `m-1` */
-    min-height: 200px;
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column; /* Stacks content vertically */
-    justify-content: flex-end; /* Pushes content to the bottom */
-    align-items: flex-start; /* Aligns content to the left */
-    text-align: left; /* Ensures text aligns left */
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.col:hover {
-    transform: scale(1.04);   
-}
 
 /*AUDIO*/
 
