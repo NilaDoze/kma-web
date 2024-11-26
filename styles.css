@@ -71,11 +71,23 @@ blog {
 }
 
 /*BLOGPAGE*/
+
+.blog_container {
+    display: flex; /* Add this to make it a flex container */
+    flex-direction: column; /* Or row, depending on the layout */
+    gap: 20px; /* This adds the space between items */
+
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px; /* Space between the cards */
     justify-content: center; /* Center align cards */
+}
+
+.blog_card {
+   margin-bottom: 1%;
 }
 
 
@@ -119,6 +131,7 @@ blog {
 
 
 /*FEATURES*/
+
 
 
 
@@ -172,7 +185,7 @@ blog {
 
 /*BLOGS*/
 
-.bio_text, .profile_text, .blog_subtitle, .blog_text, .blog_parter {
+.card-text, .bio_text, .profile_text, .blog_subtitle, .blog_text, .blog_parter {
     font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
 }
 

@@ -11,11 +11,14 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
         <header class="container-fluid px-0">
-            
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
-                <strong class="ms-3 fs-3">KMA</strong>
-            </a>
+  
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
+                    <strong class="ms-3 fs-3">KMA</strong>
+                </a>
+                <img src="Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
+            </div>
            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,6 +34,9 @@
                         <a class="nav-link disabled">Shop</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="../artwall.html">Artwall</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Blog</a>
                     </li>
 
@@ -44,7 +50,7 @@
         <div class="card-container">
 
             <div class="col">
-                <a href=".html" class="card text-decoration-none text-black">   
+                <a href="Pages/projects.html" class="card text-decoration-none text-black">   
                     <div class="card">
                         <img src="Images/projects.png" class="card-img-top" alt="projects">
                         <div class="card-body">
@@ -56,7 +62,7 @@
             </div>
 
             <div class="col">
-                <a href="Blogs/DreamChase.html" class="card text-decoration-none text-black">   
+                <a href="Pages/thoughts.html" class="card text-decoration-none text-black">   
                     <div class="card">
                         <img src="Images/thoughts.png" class="card-img-top" alt="thoughts">
                         <div class="card-body">
@@ -68,7 +74,7 @@
             </div>
 
             <div class="col">
-                <a href=".html" class="card text-decoration-none text-black">   
+                <a href="Pages/stories.html" class="card text-decoration-none text-black">   
                     <div class="card">
                         <img src="Images/stories.png" class="card-img-top" alt="stories">
                         <div class="card-body">
@@ -92,6 +98,35 @@
             <p>&copy; 2024 KMA. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <audio id="audioPlayer" src="Images/rnb.mp3"></audio>
+
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioImage = document.querySelector('.audio_img');
+        const toggleImage = document.getElementById('toggleImage');
+
+        // Set the initial volume to a lower level (e.g., 30%)
+        audioPlayer.volume = 0.05;
+
+        // Toggle play/pause on image click
+        audioImage.addEventListener('click', () => {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        });
+
+        // Define the two image sources
+        const image1 = 'Images/noaudio.png';
+        const image2 = 'Images/audio.png';
+
+        // Add click event listener for toggling the image
+        toggleImage.addEventListener('click', () => {
+            toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
