@@ -11,6 +11,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
         <header class="container-fluid px-0">
+  
             <div class="d-flex align-items-center">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <img src="Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
@@ -18,73 +19,65 @@
                 </a>
                 <img src="Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
             </div>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto d-flex">
+                <ul class="navbar-nav ms-auto justify-content-end">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">HOME</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="shop.html">SHOP</a>
+                        <a class="nav-link" href="shop.html">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="artwall.html">ARTWALL</a>
+                        <a class="nav-link" href="artwall.html">Artwall</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">BLOG</a>
+                        <a class="nav-link active" aria-current="page" href="#">Blog</a>
                     </li>
-
                 </ul>
             </div>
-
         </header>
     </nav>
 
-    <section>
-        <section class="hero" style="background: linear-gradient(135deg, #58044d, #22021a);">
-            <h1 class="display-4 fw-bold mb-4 hero-title">ARTWALL</h1>
-            <p class="hero-text">Featuring the amazing work of those I admire.<br> A collection of talent, creativity, and inspiration!</p>
-            <div class="mt-1">
-                
-                <a href="#timeline" class="text-white scroll-arrow">    
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                      
-                </a>
-
-                
+    <blog_m>
+        <p class="fs-1 pt-1 pb-5 text-center text-white"><strong>NEXT STOP...</strong></p>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4">
+                <a href="Pages/projects.html" class="card text-decoration-none">   
+                    <img src="Images/projects.png" class="card-img-top" alt="projects">
+                    <div class="card-body">
+                        <p class="card-text">A blog series where I share how to get things done, step by step. No gatekeeping—just real advice on what I did to make my projects happen.</p>
+                    </div>      
+                </a> 
             </div>
-        </section>
     
-        <!-- Timeline Section -->
-        <section id="timeline" class="py-5">
-            <div class="container position-relative">
-                <h2 class="text-center text-white mb-4">Community Art</h2>
-    
-                <div class="timeline">
-                    <!-- Timeline Item -->
-                    <div class="timeline-item">
-                        <div class="timeline-content bg-secondary text-white p-3 rounded">
-                            <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="img-fluid rounded mb-2">
-                            <h5>Project Title</h5>
-                            <p>by <strong>Milli Doe</strong></p>
-                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
-                        </div>
+            <div class="col-lg-4 col-md-12 mb-4">
+                <a href="Pages/thoughts.html" class="card text-decoration-none text-black">   
+                    <img src="Images/thoughts.png" class="card-img-top" alt="thoughts">
+                    <div class="card-body">
+                        <p class="card-text">A peek into my brain where all the random thoughts and ideas come out. Just me keeping it real about what’s on my mind.</p>
                     </div>
-
-                </div>
+                </a> 
             </div>
-        </section>
-         
-    </section>
     
-    <footer>
+            <div class="col-lg-4 col-md-12 mb-4">
+                <a href="Pages/stories.html" class="card text-decoration-none text-black">   
+                    <img src="Images/stories.png" class="card-img-top" alt="stories">
+                    <div class="card-body">
+                        <p class="card-text">A collection of all the crazy shit I’ve done and what I learned from it. Expect nothing more than the unexpected!</p>
+                    </div>
+                </a> 
+            </div>
+        </div>    
+            
+       
+    </blog_m>
 
+    <footer>
         <div class="footer_content">
             <div class="social_media"> 
                 <a href="https://discord.gg/6RNdcMWrdq" class="discord_logo">Discord</a>
@@ -94,13 +87,16 @@
             <p>&copy; 2024 KMA. All Rights Reserved.</p>
         </div>
     </footer>
-    
+
     <audio id="audioPlayer" src="Images/rnb.mp3"></audio>
 
     <script>
-         // Get the image and audio elements
-         const audioImage = document.querySelector('.audio_img');
         const audioPlayer = document.getElementById('audioPlayer');
+        const audioImage = document.querySelector('.audio_img');
+        const toggleImage = document.getElementById('toggleImage');
+
+        // Set the initial volume to a lower level (e.g., 30%)
+        audioPlayer.volume = 0.05;
 
         // Toggle play/pause on image click
         audioImage.addEventListener('click', () => {
@@ -110,17 +106,14 @@
                 audioPlayer.pause();
             }
         });
-        
-        const toggleImage = document.getElementById('toggleImage');
 
         // Define the two image sources
         const image1 = 'Images/noaudio.png';
         const image2 = 'Images/audio.png';
 
-        // Add click event listener
+        // Add click event listener for toggling the image
         toggleImage.addEventListener('click', () => {
-        // Check current image source and switch
-        toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
+            toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
         });
     </script>
 
