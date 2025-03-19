@@ -12,11 +12,11 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
         <header class="container-fluid px-0">
             <div class="d-flex align-items-center">
-                <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                    <img src="../Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
                     <strong class="ms-3 fs-3">KMA</strong>
                 </a>
-                <img src="../Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
+                <img src="Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
             </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,16 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto d-flex">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">HOME</a>
+                        <a class="nav-link" aria-current="page" href="index.html">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="../shop.html">SHOP</a>
+                        <a class="nav-link disabled" href="shop.html">SHOP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../artwall.html">ARTWALL</a>
+                        <a class="nav-link" href="artwall.html">ARTWALL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../blog.html">BLOG</a>
+                        <a class="nav-link active" href="blog.html">BLOG</a>
                     </li>
 
                 </ul>
@@ -50,7 +50,7 @@
                 <div class="col-sm-10 px-0">
                   <p class="display-4 fw-bold hero-title"><strong>DREAMED IT? </br> CHASE IT!</strong></p>
                   <p class="text my-3">Yep, this is the one everyone’s talking about. If you haven't checked it out yet, what’s your excuse? Find out what’s keeping everyone hooked.</p>
-                  <a class="btn btn-secondary" href="../Blogs/DreamChase.html" role="button">Read Now</a>
+                  <a class="btn btn-secondary" href="Blogs/DreamChase.html" role="button">Read Now</a>
                   <a class="btn btn-primary pink-btn" href="https://open.spotify.com/episode/4xQiTKteohkUxCJRT8KQgF?si=872443a16d064810" role="button">Podcast</a>  
                 </div>
             </div>
@@ -94,8 +94,8 @@
                 <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-blogs">
                     <div class="card box-shadow text-decoration-none" onclick="window.location='../Blogs/DreamChase.html';">
                         <div class="card_img_container">
-                            <img src="../Images/DreamChase.jpeg" alt="Dreamed It? Chase It!" class="card_img card-img-top" style="height: 225px; width: 100%; object-fit: cover;">
-                            <div class="overlay-text">Read Now<img src="../Images/up-right-arrow.png" class="icon"></div>
+                            <img src="Images/DreamChase.jpeg" alt="Dreamed It? Chase It!" class="card_img card-img-top" style="height: 225px; width: 100%; object-fit: cover;">
+                            <div class="overlay-text">Read Now<img src="Images/up-right-arrow.png" class="icon"></div>
                         </div>
                         <div class="card-body dark mt-2">
                             <p class="card-title">Dreamed It? Chase It!</p>
@@ -214,7 +214,7 @@
         </div>
     </footer>
     
-    <audio id="audioPlayer" src="../Images/rnb.mp3"></audio>
+    <audio id="audioPlayer" src="Images/rnb.mp3"></audio>
 
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
@@ -234,8 +234,8 @@
         });
 
         // Define the two image sources
-        const image1 = '../Images/noaudio.png';
-        const image2 = '../Images/audio.png';
+        const image1 = 'Images/noaudio.png';
+        const image2 = 'Images/audio.png';
 
         // Add click event listener for toggling the image
         toggleImage.addEventListener('click', () => {
