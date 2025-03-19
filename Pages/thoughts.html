@@ -26,16 +26,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto d-flex">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                        <a class="nav-link" aria-current="page" href="../index.html">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled">Shop</a>
+                        <a class="nav-link" href="../shop.html">SHOP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../artwall.html">Artwall</a>
+                        <a class="nav-link" href="../artwall.html">ARTWALL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../blog.html">Blog</a>
+                        <a class="nav-link active" href="../blog.html">BLOG</a>
                     </li>
 
                 </ul>
@@ -44,22 +44,160 @@
     </nav>
 
     <blog>
-        <div class="blog_container">
-            <form class="d-flex form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-sm-0" type="submit">Search</button>
-            </form>
-            <div>
-                <div class="card blog_card">
-                    <h5 class="card-header bg-black text-white">#001</h5>
-                    <div class="card-body">
-                      <h5 class="card-title">DREAMED IT? CHASE IT!</h5>
-                      <p class="card-text">Ever caught yourself daydreaming something wild? Maybe it's time to stop calling it impossible and start chasing it.</p>
-                      <a href="../Blogs/DreamChase.html" class="btn btn-dark">Read</a>
-                      <a href="https://open.spotify.com/episode/4xQiTKteohkUxCJRT8KQgF?si=872443a16d064810" class="btn btn-dark">Podcast</a>
+             
+        <div class="mb-5 d-flex flex-row align-items-center">
+            <div class="rounded text-body-emphasis text-white">
+                <div class="col-sm-10 px-0">
+                  <p class="display-4 fw-bold hero-title"><strong>DREAMED IT? </br> CHASE IT!</strong></p>
+                  <p class="text my-3">Yep, this is the one everyone’s talking about. If you haven't checked it out yet, what’s your excuse? Find out what’s keeping everyone hooked.</p>
+                  <a class="btn btn-secondary" href="../Blogs/DreamChase.html" role="button">Read Now</a>
+                  <a class="btn btn-primary pink-btn" href="https://open.spotify.com/episode/4xQiTKteohkUxCJRT8KQgF?si=872443a16d064810" role="button">Podcast</a>  
+                </div>
+            </div>
+        </div>
+        <hr style="border: 0; height: 1px; background-color: white;">
+        
+        <div class="d-flex justify-content-end align-items-center mb-5">
+            <div class="container mt-3">
+                <!-- Row of buttons for categories -->
+                <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-outline-light" id="category-all" onclick="filterByCategory('all')">All</button>
+                    <button class="btn btn-outline-light" id="category-projects" onclick="filterByCategory('projects')">Projects</button>
+                    <button class="btn btn-outline-light" id="category-thoughts" onclick="filterByCategory('thoughts')">Thoughts</button>
+                    <button class="btn btn-outline-light" id="category-stories" onclick="filterByCategory('stories')">Stories</button>
+                </div>
+            </div>
+        
+            <div class="container mt-3 categories">
+                <!-- Flexbox to align items on the right -->
+                <div class="d-flex justify-content-end align-items-center">
+                    <label for="sortBy" class="me-2 text-white">Sort By:</label>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" id="sortBy" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Sorting Option
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="sortBy">
+                            <li><a class="dropdown-item" href="#">Newest First</a></li>
+                            <li><a class="dropdown-item" href="#">Oldest First</a></li>
+                            <li><a class="dropdown-item" href="#">Most Popular</a></li>
+                            <li><a class="dropdown-item" href="#">Highest Rated</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div> 
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <!-- Thought Post -->
+                <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-thoughts">
+                    <div class="card box-shadow text-decoration-none" onclick="window.location='../Blogs/DreamChase.html';">
+                        <div class="card_img_container">
+                            <img src="../Images/DreamChase.jpeg" alt="Dreamed It? Chase It!" class="card_img card-img-top" style="height: 225px; width: 100%; object-fit: cover;">
+                            <div class="overlay-text">Read Now<img src="../Images/up-right-arrow.png" class="icon"></div>
+                        </div>
+                        <div class="card-body dark mt-2">
+                            <p class="card-title">Dreamed It? Chase It!</p>
+                            <p class="card-text">Ever caught yourself daydreaming something wild? Maybe it's time to stop calling it impossible and start chasing it.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.stopPropagation();">
+                                        Share
+                                    </button>
+                                    <a href="https://open.spotify.com/episode/4xQiTKteohkUxCJRT8KQgF?si=872443a16d064810" class="btn btn-primary pink-btn" role="button">Podcast</a>
+                                </div>
+                                <small class="text-muted card-text">November 2, 2024</small>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                
+                <!-- Story Post -->
+                <!-- Project Post -->
+            </div>
+        </div>
+        
+        <script>
+            function filterByCategory(category) {
+                // Get all blog blocks
+                const allPosts = document.querySelectorAll('.row .col-12');
+        
+                // Show all blog posts if 'all' category is selected (optional)
+                if (category === 'all') {
+                    allPosts.forEach(post => {
+                        post.style.display = 'block'; // Show all posts
+                    });
+                } else {
+                    // Filter by the selected category
+                    allPosts.forEach(post => {
+                        // If the post has the category class, display it; otherwise, hide it
+                        if (post.classList.contains(`category-${category}`)) {
+                            post.style.display = 'block'; // Show post
+                        } else {
+                            post.style.display = 'none'; // Hide post
+                        }
+                    });
+                }
+        
+                // Remove the 'active' class from all buttons
+                let buttons = document.querySelectorAll('.btn-outline-light');
+                buttons.forEach((button) => {
+                    button.classList.remove('active');
+                });
+        
+                // Add the 'active' class to the clicked button
+                const clickedButton = document.getElementById(`category-${category}`);
+                clickedButton.classList.add('active');
+            }
+        </script>
+        
+
+                
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Share</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <!-- Input field to display the link -->
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        value="https://niladoze.github.io/kma-web/Blogs/DreamChase.html" 
+                                        id="shareLink" 
+                                        readonly 
+                                    />
+                                    <!-- Button to copy the link -->
+                                    <button 
+                                        class="btn btn-outline-dark" 
+                                        type="button" 
+                                        onclick="copyToClipboard()">
+                                        Copy
+                                    </button>
+                                </div>
+                                <small class="text-muted mt-2 d-block">Share this link to let others read your newly found gem.</small>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // JavaScript to handle the copy functionality
+                    function copyToClipboard() {
+                        const linkInput = document.getElementById("shareLink");
+                        navigator.clipboard.writeText(linkInput.value)
+                            .then(() => alert("Link copied! Now go and tell everyone you found this link while fighting off a dragon."))
+                            .catch(err => console.error("Failed to copy: ", err));
+                    }
+                </script>
+                
+            </div>
         </div>
     </blog>
     

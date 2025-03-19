@@ -10,9 +10,9 @@ body {
     
 }
 
-section, blog, blog_m {
+section, main, blog, blog_m {
     background-color: rgb(14, 14, 14); 
-    height: 100vh;
+    min-height: 100vh;
     flex: 1;
 }
 
@@ -21,41 +21,37 @@ carousel {
 }
 
 blog_m {
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: center; /* Center items vertically within the section */
     padding: 1.25rem;
 }
 
-blog {
-    padding: 5% 30%; 
+blog, main {
+    padding: 5% 15%; 
 }
 
+
+/*NAV*/
 
 /*Nav displacement*/
-.carousel, blog_m, blog {
-    margin-top: 96px;
+html {
+    padding-top: 96px; /* Adjust for your navbar height */
+    scroll-padding-top: 120px;
 }
+
+
 
 
 /*HOMEPAGE*/
-.box {
-    border-radius: 10px; /* Rounded corners */
-    background: linear-gradient(to right, rgb(218, 15, 83), rgb(54, 10, 175)); /* Gradient background */
-    padding: 1px 2px;  
-    display: flex;
-}
 
-.inner_box {
-    border-radius: 10px; /* Match inner corners */
-    background: black; /* Background of the inner box */
-    
-}
 
 .feature_column {
-    cursor: pointer;
-    transition: transform 0.2s;
-    border: 1px solid; /* Define the border (style, width, and color if needed) */
-    border-radius: 0.75rem; /* Matches Bootstrap's `rounded-3` */
-    padding: 1rem; /* Matches `p-3` (1 rem = 16px) */
+    padding: 1.5rem; /* Matches `p-3` (1 rem = 16px) */
     margin: 0.25rem; /* Matches `m-1` */
+    /*border: 1px solid rgb(255, 232, 235);  Define the border (style, width, and color if needed) */
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.288);
     min-height: 200px;
     display: flex; /* Enables flexbox layout */
     flex-direction: column; /* Stacks content vertically */
@@ -66,17 +62,27 @@ blog {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.col:hover {
-    transform: scale(1.04);   
+.card {
+    border-radius: 0.25rem; /* Matches Bootstrap's `rounded-3` */
+}
+.col {
+    border-radius: 0.5rem; /* Matches Bootstrap's `rounded-3` */
+}
+
+
+.col, .card {
+    cursor: pointer;
+    transition: transform 0.3s ease;   
+}
+
+.col:hover, .card:hover {
+    transform: scale(1.015);   
 }
 
 /*BLOGPAGE*/
 
-.blog_container {
-    display: flex; /* Add this to make it a flex container */
-    flex-direction: column; /* Or row, depending on the layout */
-    gap: 20px; /* This adds the space between items */
-
+.blog_col {    
+    
 }
 
 .card-container {
@@ -86,18 +92,31 @@ blog {
     justify-content: center; /* Center align cards */
 }
 
-.blog_card {
-   margin-bottom: 1%;
-}
-
 
 /*EFFECTS*/
 
+/*Nav underlined*/
+.nav-link {
+    padding: 5px 0 !important;   
+}
+
+.nav-item {
+    padding: 0 !important;
+    margin: 0 10px;
+    border-bottom: 3px solid transparent;
+    border-radius: 5%;
+    transition: border-color 0.3s;
+}
+.nav-item:hover, .nav-item.active {
+    width:60%;
+    border-bottom-color: rgb(255, 255, 255); /* Change this to any color you prefer */
+}
+
+
+/* Gradient Bottom .carousel_section */
 .carousel_section {
     position: relative; /* Ensures positioning context for the gradient */
 }
-
-/* Gradient Bottom .carousel_section */
 .carousel_section::after{
     content: ""; /* Required for the ::after to render */
     position: absolute;
@@ -107,15 +126,50 @@ blog {
     background: linear-gradient(to top, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Gradient */
 }
 
+/*Darken Image & Overlay*/
+.card_img_container, .card_img {
+    transition: filter 0.3s ease; /* Smooth transition */
+    position: relative;
+}
+
+
+.card .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    font-size: 20px; /* Adjust size as needed */
+    font-weight: 600;
+    opacity: 0; /* Ensure it’s not visible */
+    transition: visibility 0s, opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+.card:hover .card_img {
+    filter: brightness(50%); /* Darken the image */
+}
+
+.card:hover .overlay-text {
+    opacity: 1; /* Make text visible */
+}
+
 .audio_img:hover {
     transform: scale(1.1); /* Slight zoom effect */
+}
+
+a:hover {
+    color: lightblue; /* Optional: define hover state */
+}
+
+.pink-btn:hover {
+    background-color: #660033b0; 
+    border-color: rgb(255, 183, 223);
 }
 
 
 /*CAROUSEL*/
 
 .carousel {
-    margin-top: 96px; 
     background-color: #000;
 }
 
@@ -132,7 +186,14 @@ blog {
 
 /*FEATURES*/
 
+.pink-btn {
+    background-color: #660033; 
+    border-color: rgb(255, 183, 223);
+}
 
+a {
+    color: lightblue;
+}
 
 
 
@@ -182,11 +243,65 @@ blog {
     border-radius: 10px;
 }
 
+.blog_thumbnail {
+    width: 100%; /* Make sure the image fills the container */
+    height: 100%; /* Make the image's height fill its container */
+    object-fit: cover; /* Ensure the image covers the entire space without distortion */
+    border-radius: 0.75rem; /* Keep the rounded corners */
+}
+
+.mf_img {
+    width: 30%; /* Makes the image span the entire width of its container */
+    height: 30%; /* Keeps the aspect ratio intact */
+    border-radius: 10px; /* Rounds the corners */
+}
+
+.overlay-text .icon {
+    width: 32px;  /* Adjust width of the image */
+    height: 32px; /* Adjust height of the image */
+    object-fit: contain; /* Ensures the image keeps its aspect ratio */
+}
+  
+
 
 /*BLOGS*/
 
-.card-text, .bio_text, .profile_text, .blog_subtitle, .blog_text, .blog_parter {
+.card {
+    background-color:#1e1f22;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    border-radius: 0.75rem 0.75rem;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 28px;
+    color: #dbdee1;
+    
+}
+
+.card-img-top {
+    border-radius: 0.45rem 0.45rem 0 0; /* Rounded corners only on the top */
+}
+
+.card-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #B9BBBE;
+    margin-bottom: 30px;
+}
+
+
+
+.card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text {
     font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
+}
+
+.bio_text {
+    color: #B9BBBE;
+    padding: 0 25%;
+    font-size: 15px;
+    
 }
 
 .profile_text {
@@ -198,13 +313,13 @@ blog {
 .blog_parter {
     margin-bottom: 4%; 
     font-weight: 750;
-    color: rgb(255, 255, 255);
+    color: #dbdee1;
         
 }
     
 .blog_subtitle {
     margin-bottom: 2%;
-    color: rgb(255, 255, 255);
+    color: #dbdee1;
         
 }
 
@@ -213,12 +328,106 @@ blog {
     font-size: 1.25rem;
     font-weight: 370;
     line-height: 1.6;
-    color: rgb(212, 212, 212);
+    color: #B9BBBE;
 }
     
 .blog_title {
     font-size: 50px;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
+}
+
+.blog_extras-title {
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 3rem;
+}
+
+.blog_extras-subtitle {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.blog_extras-text {
+    color: #dbdee1;
+}
+
+.toc-item {
+    display: block;
+    margin: 5px 0 5px 10px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.toc-item.active {
+    font-weight: bold;
+}
+
+.toc-container {
+    position: relative;
+}
+
+.indicator {
+    position: absolute;
+    right: 100%; /* Places it right next to the TOC */
+    top: 0; /* Initially, it will start from the top, but it will move dynamically */
+    width: 4px;
+    height: 22px;
+    background-color: #ffffff; /* Red or any color you prefer */
+    opacity: 0; /* Initially invisible */
+    transition: top 0.3s, opacity 0.3s; /* Smooth transition for movement and opacity change */
+}
+
+/* SHOP */
+
+/* Minimal Custom Styling */
+.hero {
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+/* Scroll Arrow Animation */
+.scroll-arrow {
+animation: bounce 1.5s infinite;
+font-size: 2rem; /* Adjust size as needed */
+color: white;
+}
+
+.hero-title {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(255, 0, 98, 0.35);
+}
+
+.hero-text {
+    color: #ffffff;
+    padding: 0 35%;
+    font-size: medium;
+}
+
+/* Bouncing Keyframe Animation */
+@keyframes bounce {
+0%, 100% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(10px);
+}
+}
+
+/* Custom light border color for card-footer */
+.light-border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.11); /* Adjust opacity for lightness */
+}
+
+.shop-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #dbdee1;
 }
 
 
@@ -231,31 +440,40 @@ blog {
     .m-img {
         object-fit: cover;
     } 
+    
 }
 
 @media screen and (max-width: 1300px) {
-    blog {
+    blog, main {
         padding: 6% 5%;
     }
+    .hero-text, .bio_text{
+        padding: 0 5%;
+    }
+
     .card-container {
         flex-direction: column; /* Stack cards vertically */
         padding: 0 10%;
       }
+    
+    .blog_extras {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 767px) {
-    .bio {
-        text-align: justify;
-    }
-    blog_m {
+    
+    blog_m{
         padding:  1rem;
     }
-    .card-container {
-        padding: 0 2%;
-      }
+    
     .blog_text {
         font-size: 1.15rem;
     }  
+
+    .categories {
+        display: none;
+    }
 }
 
 
