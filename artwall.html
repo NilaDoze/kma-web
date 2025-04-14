@@ -14,7 +14,7 @@
             <div class="d-flex align-items-center">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <img src="Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
-                    <strong class="ms-3 fs-3">KMA</strong>
+                    <strong class="ms-3 fs-1">KMA</strong>
                 </a>
                 <img src="Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
             </div>
@@ -45,7 +45,7 @@
 
     <section>
         <section class="hero" style="background: linear-gradient(135deg, #58044d, #22021a);">
-            <h1 class="display-4 fw-bold mb-4 hero-title">ARTWALL</h1>
+            <h1 class="display-4 fw-bold mb-4 hero-title"><strong>ARTWALL</strong></h1>
             <p class="hero-text">Featuring the amazing work of those I admire.<br> A collection of talent, creativity, and inspiration!</p>
             <div class="mt-1">
                 
@@ -64,20 +64,82 @@
         <!-- Timeline Section -->
         <section id="timeline" class="py-5">
             <div class="container position-relative">
-                <h2 class="text-center text-white mb-4">Community Art</h2>
-    
-                <div class="timeline">
-                    <!-- Timeline Item -->
-                    <div class="timeline-item">
-                        <div class="timeline-content bg-secondary text-white p-3 rounded">
-                            <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="img-fluid rounded mb-2">
-                            <h5>Project Title</h5>
-                            <p>by <strong>Milli Doe</strong></p>
-                            <a href="#" class="btn btn-primary btn-sm">View Project</a>
+                <div class="container px-4 pt-5 pb-5 text-white">
+                    <div class="row">
+                        <div class="d-flex">
+                            <hr class="separator">
+                            <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">COMMUNITY ART</p>
+                            <hr class="separator">
                         </div>
                     </div>
-
                 </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-blogs">
+                            <!-- Timeline Item -->
+                            <div class="card p-2 rounded" onclick="window.location='CommunityArt/LautGedacht.html';">
+                                <div class="card-body mt-2 text-white">
+                                    <h5 class="card-title">Laut Gedacht <i class="fs-6">(Out Loud Thoughts)</i></h5>
+                                    <p class="card-text">A collection of German texts by Milli—mixing poetry, personal stories, and emotional reflections. If you get it, you feel it. If not, keep reading.</p>
+                                    <p style="margin-bottom: 30px;">By <strong>Milli</strong> on March-April, 2025</p>
+                                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.stopPropagation();">
+                                        Share
+                                    </button>
+                                    <a href="https://www.instagram.com/tim.mlhn" class="btn pink-btn text-white">Follow Milli</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-blogs">
+                            
+                            <div class="card mb-3">
+                                <div class=" text-white p-3 rounded">
+                                    <img src="https://via.placeholder.com/150" alt="Project Thumbnail" class="img-fluid rounded mb-2">
+                                    <p class="card-title">Title</p>
+                                    <p class="card-text-artwall">Text</p>
+                                    <p>by <strong>Artist</strong></p>
+                                    <a href="#" class="btn pink-btn text-white">Button</a>
+                                </div>
+                            </div>
+                        </div> 
+                        -->                  
+                    </div>
+                </div>  
+                
+                <!-- Share Pop Up -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content bg-dark text-light">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Share</h1>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <!-- Input field to display the link -->
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        value="https://niladoze.github.io/kma-web/CommunityArt/LautGedacht.html" 
+                                        id="shareLink" 
+                                        readonly 
+                                    />
+                                    <!-- Button to copy the link -->
+                                    <button 
+                                        class="btn pink-btn text-light" 
+                                        type="button" 
+                                        onclick="copyToClipboard()">
+                                        Copy
+                                    </button>
+                                </div>
+                                <small class="text-muted mt-2 d-block">Share this link to let others read your newly found gem.</small>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </section>
          
@@ -97,34 +159,8 @@
     
     <audio id="audioPlayer" src="Images/rnb.mp3"></audio>
 
-    <script>
-         // Get the image and audio elements
-         const audioImage = document.querySelector('.audio_img');
-        const audioPlayer = document.getElementById('audioPlayer');
-
-        // Toggle play/pause on image click
-        audioImage.addEventListener('click', () => {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-            } else {
-                audioPlayer.pause();
-            }
-        });
-        
-        const toggleImage = document.getElementById('toggleImage');
-
-        // Define the two image sources
-        const image1 = 'Images/noaudio.png';
-        const image2 = 'Images/audio.png';
-
-        // Add click event listener
-        toggleImage.addEventListener('click', () => {
-        // Check current image source and switch
-        toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
-        });
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
 
