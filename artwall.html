@@ -44,21 +44,24 @@
     </nav>
 
     <section>
-        <section class="hero" style="background: linear-gradient(135deg, #58044d, #22021a);">
+        <section class="hero" style="background: url('Images/artwall_bg.gif') fixed; background-size: cover;">
+            
             <h1 class="display-4 fw-bold mb-4 hero-title"><strong>ARTWALL</strong></h1>
             <p class="hero-text">Featuring the amazing work of those I admire.<br> A collection of talent, creativity, and inspiration!</p>
-            <div class="mt-1">
-                
-                <a href="#timeline" class="text-white scroll-arrow">    
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <div class="mt-1 ">
+                <a href="#timeline" class="text-white scroll-arrow d-flex flex-column align-items-center">    
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M3.646 10.646a.5.5 0 0 1 .708 0L8 14.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                     <!--  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
                     </svg>
-                      
+                    -->  
                 </a>
-
-                
             </div>
+            
         </section>
     
         <!-- Timeline Section -->
@@ -83,13 +86,29 @@
                                     <h5 class="card-title">Laut Gedacht <i class="fs-6">(Out Loud Thoughts)</i></h5>
                                     <p class="card-text">A collection of German texts by Milli—mixing poetry, personal stories, and emotional reflections. If you get it, you feel it. If not, keep reading.</p>
                                     <p style="margin-bottom: 30px;">By <strong>Milli</strong> on March-April, 2025</p>
-                                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.stopPropagation();">
+                                    <button class="btn btn-secondary" style="border: 1px solid white;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleShareClick(event, 'CommunityArt/LautGedacht.html');">
                                         Share
                                     </button>
                                     <a href="https://www.instagram.com/tim.mlhn" class="btn pink-btn text-white">Follow Milli</a>
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-blogs">
+                            <!-- Timeline Item -->
+                            <div class="card p-2 rounded" onclick="window.location='CommunityArt/Melancholy.html';">
+                                <div class="card-body mt-2 text-white">
+                                    <h5 class="card-title">Melancholy<i class="fs-6"></i></h5>
+                                    <p class="card-text">A collection of Turkish poems by Ilker Karaaslan—quiet longing. If you’ve ever loved too deeply or hoped too hard, you’ll find a piece of yourself here.</p>
+                                    <p style="margin-bottom: 30px;">By <strong>Ilker Karaaslan</strong> | 2023–2024</p>
+                                    <button class="btn btn-secondary" style="border: 1px solid white;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleShareClick(event, 'CommunityArt/Melancholy.html');">
+                                        Share
+                                    </button>
+                                    <a href="https://www.instagram.com/overthilker" class="btn pink-btn text-white">Follow Ilker</a>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!--
                         <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-blogs">
                             

@@ -48,10 +48,10 @@ html {
 
 .feature_column {
     padding: 1.5rem; /* Matches `p-3` (1 rem = 16px) */
-    margin: 0.25rem; /* Matches `m-1` */
+    margin: 0.40rem; /* Matches `m-1` */
     /*border: 1px solid rgb(255, 232, 235);  Define the border (style, width, and color if needed) */
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.288);
+    box-shadow: 0px 0px 5px rgba(255, 0, 98, 0.35);
     min-height: 200px;
     display: flex; /* Enables flexbox layout */
     flex-direction: column; /* Stacks content vertically */
@@ -151,7 +151,7 @@ html {
     transition: visibility 0s, opacity 0.3s ease; /* Smooth transition for visibility */
 }
 
-.card:hover .card_img {
+.card:hover .card_img{
     filter: brightness(50%); /* Darken the image */
 }
 
@@ -171,6 +171,21 @@ a:hover {
     background-color: #660033b0; 
     border-color: rgb(255, 183, 223);
 }
+
+/* Scroll Arrow Animation */
+.scroll-arrow {
+    animation: pulseScale 1.5s infinite ease-in-out;
+    font-size: 2rem;
+    color: white;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    
+}
+  
+.scroll-arrow:hover {
+    transform: scale(1.2);
+}
+
 
 
 /*CAROUSEL*/
@@ -292,7 +307,7 @@ a {
 }
 
 .card-text {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     color: #B9BBBE;
     margin-bottom: 30px;
@@ -300,7 +315,7 @@ a {
 
 
 
-.card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text {
+.card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text, .bio_text, .hero-text, blockquote {
     font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
 }
 
@@ -399,12 +414,7 @@ a {
     text-align: center;    
 }
 
-/* Scroll Arrow Animation */
-.scroll-arrow {
-animation: bounce 1.5s infinite;
-font-size: 2rem; /* Adjust size as needed */
-color: white;
-}
+
 
 .hero-title {
     color: white;
@@ -438,6 +448,12 @@ color: white;
     color: #dbdee1;
 }
 
+/*ARTWALL*/
+blockquote {
+    border-left: 6px solid #dbdee15d;
+    padding-left: 1rem;
+    margin-left: 0;   
+}
 
 /* MEDIA*/
 
