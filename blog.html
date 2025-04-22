@@ -61,16 +61,16 @@
             <div class="container mt-3">
                 <!-- Row of buttons for categories -->
                 <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-outline-light" id="category-all" onclick="filterByCategory('all')">All</button>
-                    <button class="btn btn-outline-light" id="category-thoughts" onclick="filterByCategory('thoughts')">Thoughts</button>
-                    <button class="btn btn-outline-light" id="category-projects" onclick="filterByCategory('projects')">Projects</button>
-                    <button class="btn btn-outline-light" id="category-blogs" onclick="filterByCategory('blogs')">Blogs</button>
-                    <button class="btn btn-outline-light" id="category-stories" onclick="filterByCategory('stories')">Stories</button>
+                    <button class="btn btn-outline-light span-btn" id="category-all" onclick="filterByCategory('all')">All</button>
+                    <button class="btn btn-outline-light span-btn" id="category-thoughts" onclick="filterByCategory('thoughts')">Thoughts</button>
+                    <button class="btn btn-outline-light span-btn" id="category-projects" onclick="filterByCategory('projects')">Projects</button>
+                    <button class="btn btn-outline-light span-btn" id="category-blogs" onclick="filterByCategory('blogs')">Blogs</button>
+                    <button class="btn btn-outline-light span-btn" id="category-stories" onclick="filterByCategory('stories')">Stories</button>
                 </div>
             </div>
-        
+            <!--
             <div class="container mt-3 categories">
-                <!-- Flexbox to align items on the right -->
+                 Flexbox to align items on the right 
                 <div class="d-flex justify-content-end align-items-center">
                     <label for="sortBy" class="me-2 text-white">Sort By:</label>
                     <div class="dropdown">
@@ -85,7 +85,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         
         <div class="container">
@@ -120,40 +120,6 @@
                 <!-- Project Post -->
             </div>
         </div>
-        
-        <script>
-            function filterByCategory(category) {
-                // Get all blog blocks
-                const allPosts = document.querySelectorAll('.row .col-12');
-        
-                // Show all blog posts if 'all' category is selected (optional)
-                if (category === 'all') {
-                    allPosts.forEach(post => {
-                        post.style.display = 'block'; // Show all posts
-                    });
-                } else {
-                    // Filter by the selected category
-                    allPosts.forEach(post => {
-                        // If the post has the category class, display it; otherwise, hide it
-                        if (post.classList.contains(`category-${category}`)) {
-                            post.style.display = 'block'; // Show post
-                        } else {
-                            post.style.display = 'none'; // Hide post
-                        }
-                    });
-                }
-        
-                // Remove the 'active' class from all buttons
-                let buttons = document.querySelectorAll('.btn-outline-light');
-                buttons.forEach((button) => {
-                    button.classList.remove('active');
-                });
-        
-                // Add the 'active' class to the clicked button
-                const clickedButton = document.getElementById(`category-${category}`);
-                clickedButton.classList.add('active');
-            }
-        </script>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

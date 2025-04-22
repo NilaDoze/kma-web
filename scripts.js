@@ -52,3 +52,36 @@ toggleImage.addEventListener('click', () => {
 // Check current image source and switch
 toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
 });
+
+function filterByCategory(category) {
+    // Get all blog blocks
+    const allPosts = document.querySelectorAll('.row .col-12, .col-6.col-md-4.col-lg-3');
+
+    // Show all blog posts if 'all' category is selected (optional)
+    if (category === 'all') {
+        allPosts.forEach(post => {
+            post.style.display = 'block'; // Show all posts
+        });
+    } else {
+        // Filter by the selected category
+        allPosts.forEach(post => {
+            // If the post has the category class, display it; otherwise, hide it
+            if (post.classList.contains(`category-${category}`)) {
+                post.style.display = 'block'; // Show post
+            } else {
+                post.style.display = 'none'; // Hide post
+            }
+        });
+    }
+
+    // Remove the 'active' class from all buttons
+    let buttons = document.querySelectorAll('.btn-outline-light');
+    buttons.forEach((button) => {
+        button.classList.remove('active');
+    });
+
+    // Add the 'active' class to the clicked button
+    const clickedButton = document.getElementById(`category-${category}`);
+    clickedButton.classList.add('active');
+}
+
