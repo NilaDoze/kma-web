@@ -624,6 +624,7 @@ blockquote {
 
     .span-btn {
         font-size: 0.85rem;
+        padding: 12px 12px;
     }
 
     .features {
