@@ -109,7 +109,7 @@ html {
 /*Sources*/
 
 .sources-banner {
-    background: url('/Images/library.gif') fixed;
+    background: url('Images/library.gif') fixed;
     background-size: cover;
 }
 
