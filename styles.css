@@ -283,67 +283,50 @@ a:hover {
 
 .span-btn {
     background-color: rgba(255, 255, 255, 0.12);
-    color: white;
+    color:white;
     font-weight: bold;
     font-size: 0.95rem; /* Increase font size */
     padding: 12px 24px; /* Larger padding for a bigger button */
     border: none; /* Remove border to maintain the span look */
-    transition: background-color 0.3s ease; /* Smooth background transition */
 } 
+
+.span-btn.active {
+    background-color: rgba(255, 255, 255, 0.12);
+    color:white;
+}
+
 
 /* Hover styles for buttons (only buttons) */
 
-.red:hover {
+.white:hover, .white:focus {
+    background-color: #ffffff; /* Hover color for 'All' button */
+    color: rgb(0, 0, 0)
+} 
+
+.red:hover, .red:focus {
     background-color: #d4083baf; /* Hover color for 'All' button */
     color: white
 }   
 
-.green:hover {
+.green:hover, .green:focus {
     background-color: #28a746c4; /* Hover color for 'Emotional Intelligence' button */
     color: white
 }
 
-.pink:hover {
+.pink:hover, .pink:focus {
     background-color: #e83e8da9; /* Hover color for 'Trauma Healing' button */
     color: white
 }
 
-.blue:hover {
+.blue:hover, .blue:focus {
     background-color: #007bffbe; /* Hover color for 'Psychology & Behavior' button */
     color: white
 }
 
-.orange:hover {
+.orange:hover, .orange:focus {
     background-color: #ff9d00a8; /* Hover color for 'Boundaries' button */
     color: white
-}
-
-
-.red:focus {
-    background-color: #d4083baf; /* Hover color for 'All' button */
-    color: white
-}   
-
-.green:focus {
-    background-color: #28a746c4; /* Hover color for 'Emotional Intelligence' button */
-    color: white
-}
-
-.pink:focus {
-    background-color: #e83e8da9; /* Hover color for 'Trauma Healing' button */
-    color: white
-}
-
-.blue:focus {
-    background-color: #007bffbe; /* Hover color for 'Psychology & Behavior' button */
-    color: white
-}
-
-.orange:focus {
-    background-color: #ff9d00a8; /* Hover color for 'Boundaries' button */
-    color: white
-}
-
+}  
 
 
 a {
