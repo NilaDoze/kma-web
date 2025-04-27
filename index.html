@@ -7,229 +7,299 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <nav  id="smartNavbar" class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
+    <header class="container-fluid px-0">
+      <div class="d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+            <img src="../Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
+            <strong class="ms-2 fs-4" style="line-height: 0.9;">KMA's<br>DOMAIN</strong>
+        </a>
+        <img src="../Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
+      </div>
 
-    <nav class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
-        <header class="container-fluid px-0">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto d-flex">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">HOME</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link disabled" href="../shop.html">SHOP</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../artwall.html">ARTWALL</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../blog.html">BLOG</a>
+          </li>
+
+        </ul>
+      </div>
+    </header>
+  </nav>        
+
+  <div class="big_banner"></div>
+
+    
+  <section class="hp_bg2">
+    <div class="pt-5 pb-2 ">
+      <div class="flex-column text-center">
+        <p class="display-4 fw-bold text-white text-uppercase mb-2 mt-5 hero-title"><strong>¡Welcome!</strong></p>
+        <p class="fs-6 fw-semibold mb-5 text-white">KMA'S DOMAIN</p>
+        <strong><p class="bio_text">Honestly? <span style="color: #f472b6;">Adulting sucks.</span></p></strong> 
+        <p  class="bio_text bio">We wake up tired, scroll to escape, and call crying in the shower “self-care.” But behind all the grown-up talk, most of us are just kids with Wi-Fi and unresolved issues. And that’s exactly why this server exists.
+          This space is for those who cry during Pixar movies, spiral at midnight, and send memes as a coping mechanism. For the overthinkers who say too much — and then pretend they didn’t.
+          We don’t need you to have it together. Just show up as you are — messy, soft, weird, or wonderfully dramatic. You’re not too much nor too little. You’re just enough.<br></p>
+        <p class="bio_text">...<br> Welcome home, little goblin.</p>
+              
+      <div class="d-flex justify-content-center">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+
+      <img src="Images/star.png" class="star_img mt-4" alt="star">
+  
+      <div class="container d-flex justify-content-center gap-4 my-5">
+                  
+        <div>
+          <div class="story-ring">
+            <div class="story-image img1"></div>
+          </div>
+          <p class="story-text">Roles</p>
+        </div>
+
+        <div>
+          <div class="story-ring">
+            <div class="story-image img2"></div>
+          </div>
+          <p class="story-text">Level-Up System</p>
+        </div>
+        
+        <div>
+          <div class="story-ring">
+            <div class="story-image img3"></div>
+          </div>
+          <p class="story-text">Memes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+  <section class="hp_bg">
+    <div class="container px-4 pt-5 pb-5 text-white">
+      <div class="row">
+        <div class="d-flex">
+          <hr class="separator">
+          <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">FEATURES</p>
+          <hr class="separator">
+        </div>
+      </div>
+    </div>
+    
+    <div class="container text-left text-white">
+      <div class="row features g-4">
+        <!-- GAMING -->
+        <div class="col-md-6 m-0 p-0">
+          <div class="feature_column feature_bg_gaming" onclick="window.location.href='Pages/Features/gaming.html'">
+            <div class="content">
+              <div class="d-flex align-items-center">
+                <h3 class="fw-bold feature-title hero-title me-2">GAMING</h3>
+                <img src="Images/gaming.png" class="feature_img">
+              </div>
+              <p class="mb-0"><em>All About What We Play</em></p>
+            </div>
+          </div>        
+        </div>
+    
+        <!-- REWARDS -->
+        <div class="col-md-6 m-0 p-0">
+          <div class="feature_column feature_bg_rewards" onclick="window.location.href='Pages/Features/rewards.html'">
+            <div class="content">
+              <div class="d-flex align-items-center">
+                <h3 class="fw-bold feature-title hero-title me-2">REWARDS</h3>
+                <img src="Images/rewards.png" class="feature_img">
+              </div>
+              <p class="mb-0"><em>Explore All</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row features pb-5">
+        <div class="col feature_column feature_bg_streams" onclick="window.location.href='Pages/Features/streaming.html'">
+          <div class="content">
+            <div class="d-flex">
+              <h3 class="fw-bold feature-title hero-title">STREAMING<STREAMS</h3>
+              <img src="Images/streams.png" class="feature_img">
+            </div>
+            <p class="mb-0"><em>NEW IN: Arcane | Season 2</em></p>
+          </div>
+      </div>                 
+    </div>
+  </section> 
+    
+  <section>
+    <div class="container px-4 pt-5 pb-5 text-white">
+        <div class="row">
+            <div class="d-flex">
+                <hr class="separator">
+                <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">ABOUT</p>
+                <hr class="separator">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mb-5 text-white">
+      <div class="row text-center">
+        <div class="col-xxl-7">
+          <div class="card rounded" style="cursor: default; padding: 8%;">
+            <p class="display-4 fw-bold text-white text-uppercase mb-4 hero-title"><strong>ᴋʏʀᴀɪꜱᴍ</strong></p>
+            <div class="card-body card-text px-2">
+                <p><strong>Kyraism</strong> isn’t some dusty old philosophy or your grandma’s advice. It’s a <em>mindset</em> I created to help you handle <strong>life</strong>, <strong>emotions</strong>, and <strong>communication</strong> in a way that actually makes sense.</p>
+
+                <p>Based on <span style="color: #7dd3fc;">simple psychology</span> and <span style="color: #7dd3fc;">neuroscience</span> (the stuff school forgot to teach), it’s like <strong>emotional first aid</strong> — practical, life-saving tools for your well-being.</p>
+
+                <p>At its core, it’s about <em>showing up better</em> for yourself and others, and creating a <span style="color: #86efac;">judgment-free space</span> for open conversation.</p>
+
+                <hr style="border-color: #444;">
+
+                <p><strong>Best part?</strong> There’s a stash of <strong>FREE</strong>, <em>compact</em>, <em>easy-to-digest</em> info — <strong>no gatekeeping</strong>.</p>
+
+                <p><span style="color: #f472b6;">Communication tips</span>, <span style="color: #f472b6;">emotional tools</span>, <span style="color: #f472b6;">boundary basics</span>, and more — all inspired by <strong>legit books</strong> recommended by psychologists.</p>
+            </div>
+            <div>
+              <a class="btn btn-primary btn-lg px-3 pink-btn">
+                Learn More
+              </a>
+              <a href="Pages/sources.html" class="btn btn-secondary btn-lg px-3 m-1" style="border: 1px solid white;">
+                Sources 🡭
+              </a>   
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xxl-5 text-center d-flex justify-content-center hide-on-medium">
+            <img src="Images/self-love.jpg" class="img-fluid rounded custom-shadow" alt="Self-love">
+        </div>
+      </div>  
+    </div>
+  </section>
+  
+  <section class="hp_bg">
+    <div class="container px-4 pt-5 pb-5 text-white">
+      <div class="row">
+        <div class="d-flex">
+          <hr class="separator">
+          <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">MORE</p>
+          <hr class="separator">        
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-center">
+        <div class="discord-widget">
+          <div class="discord-widget-top">
+            <img src="Images/discord_widget.png ">
+          </div>
+          <div class="discord-widget-content" id="discordWidget">
+            <p class="discord-text">ACTIVE NOW</p>
+            <div class="d-flex align-items-center mb-2" style="border-bottom: 1px solid #ddd;">
+              <img src="Images/KMA_EYES_GIF.gif" class="server-icon" alt="Server Icon">
+              <h2 id="serverName">Loading...</h2>
+            </div>
             <div class="d-flex align-items-center">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
-                    <strong class="ms-3 fs-1">KMA</strong>
-                </a>
-                <img src="Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
+              <div class="online"></div>
+              <p id="onlineCount" class="m-0">ACTIVE NOW: ...</p>
+              <div class="d-flex align-items-center">
+                <img src="Images/boost_icon.png" alt="Boost Icon" style="width: 22px; height: 22px; margin: 4px; margin-left: 12px;">
+                <p class="m-0">Boost Level 2</p>
+              </div>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto d-flex">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled"  href="shop.html">SHOP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="artwall.html">ARTWALL</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">BLOG</a>
-                    </li>
-
-                </ul>
-            </div>
-
-        </header>
-    </nav>
-
-
-    <carousel class="carousel_section">
-        <div id="carouselMainMenu" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselMainMenu" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselMainMenu" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <div class="carousel-item m-item">
-                    <video src="Images/STREAMING.mp4" class="d-block w-100 m-img" alt="Streaming" autoplay loop muted></video>
-                </div>
-
-                <div class="carousel-item active m-item">
-                    <video src="Images/GAMING.webm" class="d-block w-100 m-img" autoplay loop muted></video>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMainMenu" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselMainMenu" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <a id="inviteLink" href="https://discord.gg/6RNdcMWrdq" target="_blank" class="btn-join">Join Server</a>
+          </div>
         </div>
 
-        <div class="gradient_transition"></div>
-    </carousel>
-
-    
-
-    <section>
-        <div class="pt-5 pb-2">
-            <div class="flex-column text-center">
-                <p class="display-4 fw-bold text-white text-uppercase mb-2 mt-5 hero-title"><strong>¡Welcome!</strong></p>
-                <p class="fs-6 fw-semibold mb-5 text-white">KMA'S DOMAIN</p>
-                <strong><p class="bio_text">Honestly? Adulting sucks.</p></strong> 
-                <p  class="bio_text">We slap on adult masks, talk about taxes, goals, healing—like we’re not just kids with scraped knees. This server? It’s for the part of you that still wants to feel seen, heard, and understood. No need to fake it. Show up—messy, lost, or however you are. We're here for the part of you that just wants to let go and <i>be</i>.</p>
-                <img src="Images/star.png" class="star_img my-4" alt="star">
+        <div class="discord-widget">
+          <div class="discord-widget-top">
+            <img src="Images/discord_widget.png ">
+          </div>
+          <div class="discord-widget-content" id="discordWidget">
+            <div class="discord-text">ACTIVE NOW</div>
+            <div id="memberContainer">
+              <div id="memberList"></div>
             </div>
+          </div>  
         </div>
 
-        <div class="container px-4 pt-5 pb-5 text-white">
-            <div class="row">
-                <div class="d-flex">
-                    <hr class="separator">
-                    <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">FEATURES</p>
-                    <hr class="separator">
-                </div>
-            </div>
-        </div>
-
+        <div class="discord-widget">
+          <div class="discord-widget-top-event">
+            <img src="Images/discord_widget.png">
+          </div>
+          <div class="discord-widget-content-event">
+            <p class="discord-text">REGULAR EVENTS</p>
         
-        <div class="container text-left text-white">
-            <div class="row features">
-                <div class="col feature_column feature_bg_gaming">
-                    <div class="d-flex">
-                        <h3 class="fw-bold feature-title hero-title">GAMING</h3>
-                        <img src="Images/gaming.png" class="feature_img">
-                    </div>
-                    <p class="mb-0"><em>All About What We Play</em></p>
-                </div>
-
-                <div class="col feature_column feature_bg_rewards">
-                    <div class="d-flex">
-                        <h3 class="fw-bold feature-title hero-title">REWARDS</h3>
-                        <img src="Images/rewards.png" class="feature_img">
-                    </div>
-                    <p class="mb-0"><em>Explore All</em></p>
-                </div>
-            </div>
-
-            <div class="row features pb-5">
-
-                <div class="col feature_column feature_bg_streams">
-                    <div class="d-flex">
-                        <h3 class="fw-bold feature-title hero-title">STREAMING<STREAMS</h3>
-                        <img src="Images/streams.png" class="feature_img">
-                    </div>
-                    <p class="mb-0"><em>NEW IN: Arcane | Season 2</em></p>
-
-                </div>
-            </div>
-        </div>  
+            <div id="memberContainer">
+              <div class="event-item">
+                
+                <h4>League of Legends | Daily Grind</h4>
+                <p>Jump in, play a few games, and chill. No pressure, just good vibes. See you again next week!</p>
+                <a href="https://discord.com/events/1244644562451042404/1299170162318250066" target="_blank" class="btn-join mb-2">Join Event</a>
+              </div>
         
-        <div class="container px-4 pt-5 pb-5 text-white">
-            <div class="row">
-                <div class="d-flex">
-                    <hr class="separator">
-                    <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">ABOUT</p>
-                    <hr class="separator">
-                </div>
+              <div class="event-item">
+                <h4>Black Stories 🩸🔪</h4>
+                <p>A storytelling game where you <strong>solve dark, and sometimes hilarious mysteries by asking yes-or-no questions.</strong> Come hang out & test your detective skills.</p>
+                <a href="https://discord.com/events/1244644562451042404/1306999356133740554" target="_blank" class="btn-join mb-2">Join Event</a>
+              </div>
+        
+              <!-- Other events go here -->
+        
+              <!-- Member info (if applicable) can go here as well -->
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="container mb-5 text-white">
-            <div class="row text-center">
-                <div class="col-xxl-7">
-                    <div class="card p-5 rounded" style="cursor: default;">
-                        <p class="display-4 fw-bold text-white text-uppercase mb-4 hero-title"><strong>ᴋʏʀᴀɪꜱᴍ</strong></p>
-                        <div class="card-body card-text px-2">
-                            <p><strong>Kyraism</strong> isn’t some dusty old philosophy or your grandma’s advice. It’s a <em>mindset</em> I created to help you handle <strong>life</strong>, <strong>emotions</strong>, and <strong>communication</strong> in a way that actually makes sense.</p>
+  <section class="quick-links">
+    <a href="#">FAQ</a>
+    <a href="#">Server Rules</a>
+    <a href="#">Events Calendar</a>
+    <a href="#">Support</a>
+  </section>
 
-                            <p>Based on <span style="color: #7dd3fc;">simple psychology</span> and <span style="color: #7dd3fc;">neuroscience</span> (the stuff school forgot to teach), it’s like <strong>emotional first aid</strong> — practical, life-saving tools for your well-being.</p>
+  <footer>
+    <div class="footer_content">
+      <div class="social_media"> 
+        <a href="https://discord.gg/6RNdcMWrdq" class="discord_logo">Discord</a>
+          <div style="user-select: none;">|</div> 
+          <a href="https://www.instagram.com/kma_domain" class="instagram_logo">Instagram</a>
+      </div>
 
-                            <p>At its core, it’s about <em>showing up better</em> for yourself and others, and creating a <span style="color: #86efac;">judgment-free space</span> for open conversation.</p>
+      <div class="mb-5 mt-3">
+        <a class="logo" href="index.html" style="text-align: left;">
+          <img src="../Images/logob&w.png" id="logo-img" class="logobw_img" alt="Logo">
+          <strong class="ms-2 fs-5" style="line-height: 0.9; margin: 0; text-align: left;">KMA's<br>DOMAIN</strong>
+        </a>
+        <p style="cursor:default; user-select: none;">&copy; <span id="year"></span> KMA. All rights reserved. Unauthorized use is prohibited.</p>
+      </div>
 
-                            <hr style="border-color: #444;">
-
-                            <p><strong>Best part?</strong> There’s a stash of <strong>FREE</strong>, <em>compact</em>, <em>easy-to-digest</em> info — <strong>no gatekeeping</strong>.</p>
-
-                            <p><span style="color: #f472b6;">Communication tips</span>, <span style="color: #f472b6;">emotional tools</span>, <span style="color: #f472b6;">boundary basics</span>, and more — all inspired by <strong>legit books</strong> recommended by psychologists.</p>
-                        </div>
-                        <div>
-                            <a class="btn btn-primary btn-lg px-3 pink-btn">
-                                Learn More
-                            </a>
-                            <a href="sources.html" class="btn btn-secondary btn-lg px-3 m-1" style="border: 1px solid white;">
-                                Sources 🡭
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xxl-5 text-center d-flex justify-content-center hide-on-medium">
-                    <img src="Images/self-love.jpg" class="img-fluid rounded custom-shadow" alt="Self-love">
-                </div>
-            </div>
-        </div>
-
-        <div class="container px-4 pt-5 pb-5 text-white">
-            <div class="row">
-                <div class="d-flex">
-                    <hr class="separator">
-                    <p class="fs-6 " style="margin-right: 10px; margin-left: 10px;">MORE</p>
-                    <hr class="separator">
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <footer>
-
-        <div class="footer_content">
-            <div class="social_media"> 
-                <a href="https://discord.gg/6RNdcMWrdq" class="discord_logo">Discord</a>
-                <div>|</div> 
-                <a href="https://www.instagram.com/kma_domain" class="instagram_logo">Instagram</a>
-            </div>
-            <p>&copy; 2024 KMA. All Rights Reserved.</p>
-        </div>
-    </footer>
-    
-    <audio id="audioPlayer" src="Images/rnb.mp3"></audio>
-
-    <script>
-        const audioPlayer = document.getElementById('audioPlayer');
-        const audioImage = document.querySelector('.audio_img');
-        const toggleImage = document.getElementById('toggleImage');
-
-        // Set the initial volume to a lower level (e.g., 30%)
-        audioPlayer.volume = 0.05;
-
-        // Toggle play/pause on image click
-        audioImage.addEventListener('click', () => {
-            if (audioPlayer.paused) {
-                audioPlayer.play();
-            } else {
-                audioPlayer.pause();
-            }
-        });
-
-        // Define the two image sources
-        const image1 = 'Images/noaudio.png';
-        const image2 = 'Images/audio.png';
-
-        // Add click event listener for toggling the image
-        toggleImage.addEventListener('click', () => {
-            toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
-        });
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      <img class="fsk_16_img" src="Images/FSK_16.png">
+      <img class="pegi_16_img" src="Images/PEGI_16.png">
+    </div>
+  </footer>
+  <audio id="audioPlayer" src="Images/rnb.mp3"></audio>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="scripts.js"></script>  
 </body>
 </html>
 

@@ -1,3 +1,30 @@
+let prevScroll = window.scrollY;
+const navbar = document.getElementById('smartNavbar');
+let scrollDelta = 0;
+const hideThreshold = 100; // how much you scroll before hiding
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    const scrollDiff = currentScroll - prevScroll;
+
+    // Scrolling down
+    if (scrollDiff > 0) {
+        scrollDelta += scrollDiff;
+
+        if (scrollDelta > hideThreshold) {
+            navbar.classList.add('hide-navbar');
+        }
+    } 
+    // Scrolling up
+    else {
+        scrollDelta = 0;
+        navbar.classList.remove('hide-navbar');
+    }
+
+    prevScroll = currentScroll;
+});
+
+
 function handleShareClick(event, url) {
     // Stop the event from propagating (prevents the card's click handler)
     event.stopPropagation();
@@ -85,3 +112,67 @@ function filterByCategory(category) {
     clickedButton.classList.add('active');
 }
 
+const serverId = '1244644562451042404';
+const widgetUrl = `https://discord.com/api/guilds/${serverId}/widget.json`;
+
+fetch(widgetUrl)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('serverName').textContent = data.name;
+    document.getElementById('onlineCount').textContent = `Online: ${data.presence_count}`;
+    document.getElementById('inviteLink').href = data.instant_invite;
+
+    const memberList = document.getElementById('memberList');
+    memberList.innerHTML = ''; // Clear
+
+    const excludedBots = ['Arcane', 'Carl-bot', 'Craig', 'Yo Nigga']; // List of bots to exclude
+
+    data.members.forEach((member, i) => {
+      // Skip the bot members
+      if (excludedBots.includes(member.username)) {
+        return;
+      }
+
+      const div = document.createElement('div');
+      div.classList.add('member');
+      
+      // Get the status color based on the status
+      let statusColor;
+      switch (member.status) {
+        case 'online':
+          statusColor = '#4d955f';  // Green for online
+          break;
+        case 'idle':
+          statusColor = '#f5b041';  // Yellow for idle
+          break;
+        case 'dnd':
+          statusColor = '#e74c3c';  // Red for do not disturb
+          break;
+        case 'offline':
+          statusColor = '#7f8c8d';  // Gray for offline
+          break;
+        default:
+          statusColor = '#7f8c8d';  // Default to gray if no status
+          break;
+      }
+
+      div.innerHTML = `
+        <img src="${member.avatar_url}" alt="${member.username}">
+        <span class="status-dot" style="background-color: ${statusColor};"></span>
+        <span>${member.username}</span>
+      `;
+
+      memberList.appendChild(div);
+
+      if (i < data.members.length - 1) {
+        const hr = document.createElement('hr');
+        memberList.appendChild(hr);
+      }
+    });
+  })
+  .catch(error => {
+    console.error('Widget failed:', error);
+    document.getElementById('discordWidget').innerHTML = "<p>Widget disabled or server offline.</p>";
+  });
+
+document.getElementById('year').textContent = new Date().getFullYear();

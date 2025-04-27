@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  
+
+
+<script>
+  const serverId = '1244644562451042404';
+const widgetUrl = `https://discord.com/api/guilds/${serverId}/widget.json`;
+
+fetch(widgetUrl)
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('serverName').textContent = data.name;
+    document.getElementById('onlineCount').textContent = `Online: ${data.presence_count}`;
+    document.getElementById('inviteLink').href = data.instant_invite;
+  })
+  .catch(error => {
+    console.error('Failed to load Discord widget:', error);
+    document.getElementById('discordWidget').innerHTML = "<p>Server offline or widget not enabled.</p>";
+  });
+
+  </script> 
+
+
+
+
+
+
+
+
+
+
+
+
   <style>
     .toc-item.active {
       font-weight: bold;
@@ -138,6 +171,48 @@
       </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <nav id="smartNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Disappearin' Queen</a>
+      </div>
+    </nav>
+    
+    <!-- Filler -->
+    <div style="height: 2000px; padding-top: 80px;">
+      Scroll to test me, baby!
+    </div>
+    
+    <script>
+      let prevScroll = window.scrollY;
+      const navbar = document.getElementById('smartNavbar');
+    
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY;
+    
+        if (currentScroll > prevScroll) {
+          // Down
+          navbar.classList.add('hide-navbar');
+        } else {
+          // Up
+          navbar.classList.remove('hide-navbar');
+        }
+    
+        prevScroll = currentScroll;
+      });
+    </script>
+    
+    <style>
+      .hide-navbar {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+    
+      .navbar {
+        transition: transform 0.3s ease-in-out;
+      }
+    </style>
+
 
 </body>
 </html>

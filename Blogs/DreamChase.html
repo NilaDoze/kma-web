@@ -9,12 +9,12 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
+    <nav id="smartNavbar" class="navbar navbar-expand-sm navbar-dark bg-black px-5 p-3 fixed-top">
         <header class="container-fluid px-0">
             
             <a class="navbar-brand d-flex align-items-center" href="../index.html">
                 <img src="../Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
-                <strong class="ms-3 fs-1">KMA</strong>
+                <strong class="ms-2 fs-4" style="line-height: 0.9;">KMA's<br>DOMAIN</strong>
             </a>
            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,12 +53,14 @@
             </div>
             <hr style="border: 0; height: 1px; background-color: white;">
 
-            <div id="heading-0" class="blog_subtitle fs-2">Dreams—It’s Halfway to The Finish Line!</div>
+            <div id="heading-0" class="blog_subtitle">Dreams—It’s Halfway to The Finish Line!</div>
             <p class="blog_text">
                 Have you ever sat down and daydreamed about something so improbable that you had to pause for a solid second in awe at the idea that just slipped out of your mind? You know, those moments when you begin whispering to yourself, "The fuck am I thinking about?"—a thought so outrageous and off-the-table that the only word that feels remotely appropriate to call yourself is "delusional"? Because trust me, I’ve been there. And, in all that glorious mental f*ckery, one question enlightened me: What sets dreams and goals apart?
             </p>
+
             
-            <p id="heading-1" class="blog_parter fs-3">What the F*ck Is a "Dream"?</p>  
+            
+            <p id="heading-1" class="blog_parter">What the F*ck is a "Dream"?</p>  
             <p class="blog_text">  
                 Let’s take a trip back to our childhood. Back in the day, everyone had a dream. Some wanted to be astronauts, and let’s be real, a lot of us just wanted to be Spider-Man (Me? I wanted to be him and take him out for dinner too.) These childhood fantasies were what we called "dreams," yet we also use the same term for our more mundane and awfully boring adult aspirations, like buying a house. Sooooo—what exactly unites the two? What makes a dream... a <em>dream?</em><br/><br/>
             
@@ -67,7 +69,7 @@
                 See, if you ever bothered to listen in biology class, which I didn't, or had minimal interest in neuroscience, you’d know that the state in which dreams are created is what we nerdy people like to call the REM (Rapid Eye Movement) phase. To be more specific, the REM phase is a sleeping period where the brain processes memories, emotions, and unresolved thoughts, building new neural connections. In simpler terms? That’s dreaming. But why the f*ck does that even matter? Well in this dream state, we’re no longer bound by the rules, beliefs and limitations of waking life. Without the usual mental filters, we can explore possibilities we’d never consider possible when awake. And that’s what makes them dreams—they defy the limits we’ve learned to accept. So whether it’s the images we see at night or the goals we’re afraid to pursue, dreams are simply glimpses of what could be possible and very much real.
             </p>
 
-            <p id="heading-2" class="blog_parter fs-3">Dreams into Praxis</p>  
+            <p id="heading-2" class="blog_parter">Dreams Into Praxis</p>  
             <p class="blog_text">            
                 Now, can you become Spider-Man and climb walls? Well, technically, I used to climb the walls of my hall, and of course, my parents would come and give me one of those good Hispanic beatings because there were footprints all over the wall. But doing that made me happy, so I kept doing it regardless.<br/><br/>
                 <em>Yea I get that, but... Kyra, we are not children anymore.</em><br/><br/>
@@ -78,7 +80,7 @@
                 And before you roll your eyes as if you’ve just had to endure a stranger’s unsolicited life advice, I get it—nobody wants to sit through a boring story. The majority of us much rather be scrolling through some mindless TikTok. But this story lives on with purpose, after all,  it’s the reason my blog exists; the reason it is not yet another one of said forgotten dreams. Think of this story as the Mother Teresa of my life—my <em>origin story</em>. It’s yapping time! 
             </p>
              
-            <p id="heading-3" class="blog_parter fs-3">My Origin Story</p>  
+            <p id="heading-3" class="blog_parter">My Origin Story</p>  
             <p class="blog_text">    
                 About a year ago, I experienced a breakup with a man I loved deeply. I won’t bore you with the details, but during that time, I started writing an illustrated <a href="Bittersweet.html">novel</a>—very Gen Z of me—and I even recorded and edited the full audiobook! Keep in mind, I’ve always been someone who starts projects but never finishes them. Yet, a year passed, and I kept writing my thoughts in the most creative way I knew how. Little by little, I made progress, and two months ago, I finally finished the novel. For once in my life, I felt proud of completing a project. It reminded me of the DIYs I used to create in my patio when I was six; it made me happy.<br/><br/>
                 <img src="../Images/book.jpg" class="blog_img" alt="Kyra sitting on the train"><br/><br/>
@@ -91,7 +93,7 @@
                 Humans, am I right? Afraid little creatures of change, and very contradictory. Of course, I’m not just sitting around waiting for him to come back. Since then, I’ve learned some coding, built a discord bot, created a website, started a meme account, polished my server, and written this blog—besides meeting all the beautiful friends I have now. Listen, I started finishing every project and pursuing every dream, because dear, I fucking can and so do you.
             </p>
 
-            <p id="heading-4" class="blog_parter fs-3">Main Takeaway </p>
+            <p id="heading-4" class="blog_parter">Main Takeaway </p>
             <p class="blog_text">    
                 You can achieve your dreams, just like anyone else. Many people thought I was actually fucking delusional, crazy, and plainly not in my right mind. Did that stop me? Well, no, it did not—if it wasn’t obvious by now. All it takes is shining a little bit of action on that dream and silence any voice that says, "That’s ridiculous." Because it’s not. Do what makes you feel like yourself, regardless of what anyone thinks. Be you. I love you all.<br/><br/>
                 
@@ -127,31 +129,6 @@
                       <div class="indicator" style="opacity: 1;"></div>
                     </div>
                 </div>
-
-                <script>
-                    document.addEventListener('scroll', function() {
-                        const sections = document.querySelectorAll('section'); // Or whatever your sections are
-                         const indicator = document.querySelector('.indicator');
-                        let currentSection = null;
-
-                        sections.forEach(section => {
-                            const rect = section.getBoundingClientRect();
-                            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                            currentSection = section;
-                            }
-                        });
-
-                        if (currentSection) {
-                            const offsetTop = currentSection.offsetTop;
-                            const sectionHeight = currentSection.offsetHeight;
-        
-                            indicator.style.top = `${offsetTop + sectionHeight / 2}px`; // Position the indicator in the middle of the section
-                            indicator.style.opacity = 1; // Make it visible
-                        } else {
-                            indicator.style.opacity = 0; // Hide it when no section is in view
-                        }
-                    }); 
-                </script>
 
                 <div>
                     <h4 class="mb-4 blog_extras-title">Reading’s Overrated</h4>
@@ -221,5 +198,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+		<script src="../scripts.js"></script>
 </body>
 </html> 

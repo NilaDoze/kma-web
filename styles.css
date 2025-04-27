@@ -4,15 +4,14 @@ body {
     display: flex; 
     flex-direction: column;
     min-height: 100vh;
-    background-image: url("Images/home_bg.png");
+    background-color: #161616;
     background-size: cover;
-    background-position: center;
-    
+    background-position: center; 
 }
 
 section, main, blog, blog_m {
     background-color: rgb(22, 22, 22); 
-    min-height: 100vh;
+    
     flex: 1;
 }
 
@@ -38,7 +37,21 @@ blog, main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;     
+    text-align: center;   
+    background-attachment: fixed;  
+    
+}
+
+.big_banner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Keeps it compact */
+    background-image: url('Images/big_banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;    
 }
 
 /*NAV*/
@@ -49,25 +62,134 @@ html {
     scroll-padding-top: 120px;
 }
 
+.hide-navbar {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+
+.navbar {
+    transition: transform 0.4s ease-in-out;
+}
+
 
 
 
 /*HOMEPAGE*/
 
+.hp_bg{
+    position: relative;
+    background-image: url('Images/hp_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
+
+}
+
+.hp_bg2 {
+    background-image: url('Images/hp_bg2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 500px;   
+}
+
+.hp_bg::before,
+.hp_bg::after,
+.big_banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  pointer-events: none; /* <<< THIS prevents ghost clicks */
+  z-index: 0; /* Sit behind all your content */
+  
+}
+
+.hp_bg::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.hp_bg::after, .big_banner::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+.hp_bg.last-section::after {
+  background: none;
+}
+
 
 .feature_column {
+    position: relative;
     padding: 1.5rem; /* Matches `p-3` (1 rem = 16px) */
     margin: 0.40rem; /* Matches `m-1` */
-    /*border: 1px solid rgb(255, 232, 235);  Define the border (style, width, and color if needed) */
     border-radius: 0.5rem;
-    box-shadow: 2px 2px 6px #660033b0;
-    min-height: 200px;
+    box-shadow: 4px 4px 6px #8b0247b0;
+    min-height: 275px; /* Set a fixed minimum height */
     display: flex; /* Enables flexbox layout */
     flex-direction: column; /* Stacks content vertically */
     justify-content: flex-end; /* Pushes content to the bottom */
     text-align: left; /* Ensures text aligns left */
-    background-blend-mode: darken;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4); /* Background color for the column itself */
+    background-position: center;
+    background-size: cover;
+}
+
+.content {
+    z-index: 1; /* This brings text above the fade */
+}
+
+.feature_column::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Stretches the pseudo-element to cover the entire column */
+    background: linear-gradient(to top, rgba(19, 2, 16, 0.637), rgba(0, 0, 0, 0.226) 50%);
+    opacity: 0; /* Initially hidden */
+    z-index: 0; /* Behind everything else */
+    transition: opacity 0.4s ease; /* Fade-in effect on hover */
+}
+.feature_column:hover::before {
+    opacity: 1; /* Gradient fade-in on hover */
+}
+
+.feature_column:hover {
+    transform: scale(0.985); /* Optional scaling effect on hover */
+}
+    
+.story-ring {
+    background: linear-gradient(#d66699, #d62976, #d66e29, #962fbf, #4f5bd5);
+    border-radius: 50%;
+    padding: 4px;
+    display: inline-block;
+    transition: transform 0.4s ease;  
+}
+
+.story-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid rgb(22, 22, 22); /* white border directly on the image */
+    display: flex;
+  }
+
+  .img1 { background-image: url('Images/roles.png'); }
+  .img2 { background-image: url('Images/levelup.png'); }
+  .img3 { background-image: url('Images/memes.png'); }
+
+
+.story-text {
+    margin-top: 0.5rem;
+}
+
+.story-ring:hover {
+    transform: scale(1.05) 
 }
 
 .card {
@@ -78,13 +200,13 @@ html {
 }
 
 
-.col, .card {
+.col, .card, .feature_column, .story-image {
     cursor: pointer;
-    transition: transform 0.3s ease;   
+    transition: transform 0.4s ease;   
 }
 
-.col:hover, .card:hover {
-    transform: scale(1.015);   
+.card:hover, .discord-widget:hover {
+    transform: scale(1.015);
 }
 
 .separator {
@@ -92,6 +214,199 @@ html {
     background-color: white;
     flex-grow: 1;
 }
+
+/*DISCORD WIDGETS*/
+
+.discord-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.discord-widget {
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: auto;      /* Adjust width to fit content */
+    height: auto;     /* Adjust height to fit content */
+    border-radius: 20px;  
+    transition: transform 0.4s ease;
+    margin: 0.5rem;   
+}
+
+.discord-widget-top, .discord-widget-top-event {
+    background: #831a5c;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 45px;
+    font-family: 'Segoe UI', sans-serif;
+    
+}
+
+.discord-widget-top {
+    width: 300px;   
+}
+
+.discord-widget-top-event {
+    width: 400px;
+}
+
+
+.discord-widget-top img, .discord-widget-top-event img, .event-item img {
+    max-width: 100%;         /* Ensures the image doesn't exceed the width of the container */
+    max-height: 100%;        /* Ensures the image doesn't exceed the height of the container */
+    padding: 8px 0px 4px 4px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    object-fit: contain;     /* Maintains the aspect ratio of the image */
+
+}
+
+.discord-widget-content, .discord-widget-content-event {
+    background: #1e1f22;
+    color: white;
+    padding: 1rem 1.5rem;
+    margin: 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.discord-widget-content {
+    width: 300px;
+}
+
+.discord-widget-content-event, .discord-widget-top-event {
+    width: 400px;
+}
+
+
+.server-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+#serverName {
+    font-size: 24px;
+}
+
+.btn-join {
+    background: #831a5c;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.199);
+    transition: ease-in 0.2s;
+}
+
+.btn-join:hover {
+    background-color: #69164b;
+}
+
+.online {
+    width: 10px;          /* Set the diameter of the circle */
+    height: 10px;         /* Set the diameter of the circle */
+    background-color: #4d955f;  /* Set the color to green */
+    border-radius: 50%;   /* Makes it a circle */
+    margin: 0.5rem;
+}
+
+#memberContainer{
+    height: 158px;
+    overflow-y: auto;
+    margin: 0;
+    border-radius: 8px;
+}
+
+/* Chrome, Edge, Safari */
+#memberContainer::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+#memberContainer::-webkit-scrollbar-track {
+    background: transparent;
+    box-shadow: none;
+}
+  
+#memberContainer::-webkit-scrollbar-thumb {
+    background-color: #831a5c;
+    border-radius: 10px;
+}
+  
+#memberContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #69164b;
+    cursor: pointer;
+}
+
+#memberList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 250px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    position: relative;
+}
+
+.member img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.member span {         /*name*/
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+hr {
+    margin: 4px 0;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+}
+
+.status-dot {
+    position: absolute;
+    bottom: 3px;  /* Moves the dot 2px from the bottom */
+    left: 18px;   /* Moves the dot 2px from the right */
+    width: 16px; /* Increased size for better visibility */
+    height: 16px;
+    border-radius: 50%;
+    background-color: #4d955f; /* Default to green (change with JS dynamically) */
+    border: 3px solid #2c2f36;  /* Dark border */
+} 
+
+/* Optional: Styling event cards for clarity */
+.event-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px; 
+}
+
+.event-item p {
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.event-item a {
+    margin-top: 5px;
+}
+
 
 /*BLOGPAGE*/
 
@@ -194,9 +509,11 @@ html {
     position: absolute;
     bottom: 0;
     width: 100%; /* Cover the full width of the parent */
-    height: 20px; /* Adjust height as needed */
-    background: linear-gradient(to top, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Gradient */
+    height: 40px; /* Adjust height as needed */
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)); /* Gradient */
 }
+
+
 
 /*Darken Image & Overlay*/
 .card_img_container, .card_img {
@@ -234,7 +551,7 @@ a:hover {
 }
 
 .pink-btn:hover {
-    background-color: #660033b0; 
+    background-color: #69164b; 
     border-color: rgb(255, 183, 223);
 }
 
@@ -252,9 +569,6 @@ a:hover {
     transform: scale(1.2);
 }
 
-.custom-shadow {
-    box-shadow: 10px 10px 5px #660033b0;
-}
 
 
 /*CAROUSEL*/
@@ -277,14 +591,15 @@ a:hover {
 /*FEATURES*/
 
 .pink-btn {
-    background-color: #660033; 
+    background-color: #831a5c; 
     border-color: rgb(255, 183, 223);
+    transition: ease-in 0.2s;
 }
 
 .span-btn {
     background-color: rgba(255, 255, 255, 0.12);
     color:white;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 0.95rem; /* Increase font size */
     padding: 12px 24px; /* Larger padding for a bigger button */
     border: none; /* Remove border to maintain the span look */
@@ -352,14 +667,18 @@ a {
 
 .feature_bg_gaming {
     background-image: url(Images/gaming_bg.gif);
+    background-blend-mode: darken;
 }
 
 .feature_bg_rewards {
     background-image: url(Images/rewards_bg.gif);
+    background-blend-mode: darken;
 }
 
 .feature_bg_streams {
     background-image: url(Images/streaming_bg.gif);
+    background-blend-mode: darken;
+    
 }
 
 .star_img {
@@ -414,7 +733,6 @@ a {
 .card-title {
     font-weight: 600;
     font-size: 28px;
-    color: #dbdee1;
     
 }
 
@@ -425,47 +743,47 @@ a {
 
 .card-text {
     font-size: 15px;
-    font-weight: 500;
-    color: #B9BBBE;
     margin-bottom: 30px;
 }
 
 
 
-.card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text, .bio_text, .hero-text, blockquote, .badge {
-    font-family: "Proxima Nova", "Proxima Nova Fallback", sans-serif;
+.card-title, .card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text, .bio_text, .hero-text, blockquote, .badge, .discord-text {
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .profile_text {
     color: rgb(116, 116, 116);
 }
 
-.text, .bio_text, .blog_text {
+.text, .bio_text, .blog_text, .discord-text, .card-text, .event-item p {
     color: #B9BBBE;
 }
 
-.blog_parter, .blog_subtitle, .blog_extras-text {
+.blog_parter, .blog_subtitle, .blog_extras-text, .card-title, .event-item h4 {
     color: #dbdee1;
 }
 
-.blog_title, .blog_extras-title, .blog_extras-subtitle {
+.blog_title, .blog_extras-title, .blog_extras-subtitle, .story-text {
     color: #ffffff;
 }
 
 
 .bio_text {
-    padding: 0 25%;
+    padding: 0 30%;
     font-size: 15px;
 }
 
     
 .blog_parter {
-    margin-bottom: 4%; 
-    font-weight: 750;     
+    margin-bottom: 2%; 
+    font-weight: 750;
+    font-size: 36px;     
 }
     
 .blog_subtitle {
     margin-bottom: 2%;
+    font-size: 42px;
 }
 
 .blog_text{
@@ -569,6 +887,103 @@ blockquote {
     padding-left: 1rem;
 }
 
+/*FOOTER*/
+
+footer {
+    background: black;
+    color: rgba(177, 172, 172, 0.438);
+    padding: 20px;
+    text-align: center;
+}
+footer .social_media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+footer .instagram_logo {
+    background-image: url("Images/instagram.png");
+    background-repeat: none;
+    background-size: cover;
+    margin: 0.5%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999999px;
+}
+footer .discord_logo {
+    background-image: url("Images/discord.png");
+    background-repeat: none;
+    background-size: cover;
+    margin: 0.5%;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-indent: -9999999px;
+}
+
+.quick-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* or use 4px, 8px, etc., depending on your spacing preference */
+    margin: 30px 0; 
+    transition: transform 0.2 ease-in;
+}
+
+.quick-links a {
+    text-decoration: none;
+    color: #ffffff; /* Or whatever your text color is */
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: color 0.2s ease; /* Transition for text color */
+}
+
+.quick-links a:hover {
+    color: #B9BBBE;
+}
+
+
+.logobw_img {
+    width: 70px;
+    height: auto;
+}
+
+.logo {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;     
+    cursor: pointer;
+}
+  
+.logo:hover strong {
+    color: rgba(255, 255, 255, 0.719);
+}
+  
+.logo:hover #logo-img {
+    content: url('../Images/logo.png'); /* Change image source on hover */
+    opacity: 0.8; /* Slightly fade the image on hover */
+}
+
+.fsk_16_img {
+    width: 100px;
+    height: auto;
+    background-color: #bebebe44;
+    padding: 0.6rem;
+    border-radius: 5%;
+}
+
+.pegi_16_img {
+    width: 86px;
+    height: auto;
+    background-color: #bebebe44;
+    padding: 0.6rem;
+    border-radius: 5%;
+}
+
+
 /* MEDIA*/
 
 @media screen and (max-width: 1600px) {
@@ -603,6 +1018,11 @@ blockquote {
     .blog_extras {
         display: none;
     }
+
+    .hp_bg2, .hp_bg {
+        background-image: none;
+    } 
+
     
 }
 
@@ -636,14 +1056,45 @@ blockquote {
         text-align: center; /* Ensures text aligns left */ 
         align-items: center;
         justify-content: center;
+        min-height: 200px;
     }
 
     .feature-title {
         font-size: 28px;
     }
     
+    .small_banner{
+        height: 175px;
+    } 
+
+    .big_banner {
+        height: 150px;
+        background-attachment: scroll;
+        background-image: url(Images/big_banner2.png);
+    }
+
+    .discord-widget, .discord-widget-top, .discord-widget-content, .discord-widget-top-event,.discord-widget-content-event {
+        width: 100%; /* Make each widget take full width on smaller screens */
+    }
+
+    .quick-links{
+        gap: 0rem; /* No gap for very small screens */
+    }
 }
 
+@media screen and (max-width: 500px) {
+
+.bio {
+    text-align: left;
+}
+
+.quick-links{
+    gap: 0rem; /* No gap for very small screens */
+    font-size: 14px;
+}
+
+
+}
 
 /*AUDIO*/
 
@@ -704,39 +1155,4 @@ input[type="range"]::-ms-thumb {
     box-shadow: white 0 0 10px;
     background: #000; /* Color of the thumb set to black */
     cursor: pointer; /* Pointer cursor on hover */
-}
-
-/*FOOTER*/
-
-footer {
-    background: black;
-    color: rgba(177, 172, 172, 0.438);
-    padding: 20px;
-    text-align: center;
-}
-footer .social_media {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-footer .instagram_logo {
-    background-image: url("Images/instagram.png");
-    background-repeat: none;
-    background-size: cover;
-    margin: 0.5%;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-indent: -9999999px;
-}
-footer .discord_logo {
-    background-image: url("Images/discord.png");
-    background-repeat: none;
-    background-size: cover;
-    margin: 0.5%;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    text-indent: -9999999px;
 }
