@@ -43,7 +43,7 @@
         </header>
     </nav>
 
-    <blog>
+    <blog class="gradient-bottom">
              
         <div class="mb-5 d-flex flex-row align-items-center">
             <div class="rounded text-body-emphasis text-white">
@@ -103,7 +103,7 @@
                                 <p class="card-text">Ever caught yourself daydreaming something wild? Maybe it's time to stop calling it impossible and start chasing it.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <button class="btn btn-secondary" style="border: 1px solid white;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="event.stopPropagation();">
+                                        <button class="btn btn-secondary" style="border: 1px solid white;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleShareClick(event, 'Blogs/DreamChase.html');">
                                             Share
                                         </button>
                                         <a href="https://open.spotify.com/episode/4xQiTKteohkUxCJRT8KQgF?si=872443a16d064810" class="btn btn-primary pink-btn" role="button">Podcast</a>
@@ -118,6 +118,29 @@
                 
                 <!-- Story Post -->
                 <!-- Project Post -->
+                <div class="col-12 col-lg-6 col-xxl-4 mb-4 category-all category-projects">
+                    <div class="card" onclick="window.location='Blogs/MinecraftMobCanvas.html';">
+                        <div class="card_img_container">
+                            <img src="Images/mobs.png" alt="Minecraft Mob Canvas" class="card_img card-img-top" style="height: 225px; width: 100%; object-fit: cover;">
+                            <div class="overlay-text">Read Now<img src="Images/up-right-arrow.png" class="icon"></div>
+                        </div>
+                        <div class="p-2">
+                            <div class="card-body mt-2">
+                                <p class="card-title">Minecraft Mob Canvas</p>
+                                <p class="card-text">A step-by-step DIY guide to painting and designing your own Minecraft mobs using a simple canvas. No tech skills needed—just some creativity.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <button class="btn btn-secondary" style="border: 1px solid white;" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleShareClick(event, 'Blogs/MinecraftMobCanvas.html');">
+                                            Share
+                                        </button>
+                                        <a href="" class="btn btn-primary pink-btn" role="button">Reel</a>
+                                    </div>
+                                    <small class="text-muted card-text">May 05, 2025</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
             </div>
         </div>
 

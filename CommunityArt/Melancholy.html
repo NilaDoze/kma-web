@@ -43,7 +43,7 @@
         </header>
     </nav>
 
-    <blog class="blog_page d-flex">
+    <blog class="blog_page d-flex gradient-bottom">
 
         <div>
             <div>
@@ -600,58 +600,14 @@
                         <a href="#heading-21" class="toc-item">Zamanın Sessiz Kıyısında</a>
                         <a href="#heading-22" class="toc-item">Kafama Sıkmak Aklıma Geldikçe Yazdığım Saçmalıklar</a>
                       </div>
-                      <div class="indicator" style="opacity: 1;"></div>
                     </div>
                 </div>
 
-                <script>
-                    document.addEventListener('scroll', function() {
-                        const sections = document.querySelectorAll('section'); // Or whatever your sections are
-                         const indicator = document.querySelector('.indicator');
-                        let currentSection = null;
-
-                        sections.forEach(section => {
-                            const rect = section.getBoundingClientRect();
-                            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-                            currentSection = section;
-                            }
-                        });
-
-                        if (currentSection) {
-                            const offsetTop = currentSection.offsetTop;
-                            const sectionHeight = currentSection.offsetHeight;
-        
-                            indicator.style.top = `${offsetTop + sectionHeight / 2}px`; // Position the indicator in the middle of the section
-                            indicator.style.opacity = 1; // Make it visible
-                        } else {
-                            indicator.style.opacity = 0; // Hide it when no section is in view
-                        }
-                    }); 
-                </script>
-
-      
                 <div>
                     <h4 class="blog_extras-title">Recent posts</h4>
-                    <ul class="list-unstyled">
-                        <li>
-                            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.instagram.com/p/DBwPLW1MWDM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
-                                <img src="../Images/arcane.png" alt="Arcane" style="width: 80px; height: 80px; object-fit: cover;">
-                                <div class="col-lg-8">
-                                    <h6 class="mb-0 blog_extras-text">StreamingArcane</h6>
-                                    <small class="text-secondary">October 30, 2024</small>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="https://www.instagram.com/p/DBjAi8SsQ7Z/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">
-                                <img src="../Images/LS.png" alt="League Saturdays" style="width: 80px; height: 80px; object-fit: cover;">
-                                <div class="col-lg-8">
-                                    <h6 class="mb-0 blog_extras-text">League Saturdays Event</h6>
-                                    <small class="text-secondary">October 25, 2024</small>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="white-line mt-4 mb-2"></div>
+                    <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/ab770a33892054e2906741e9c87aab64.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                    <div class="white-line"></div>
                 </div>
             
                 <div class="social-links">

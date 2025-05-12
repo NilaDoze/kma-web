@@ -76,6 +76,11 @@ html {
 
 /*HOMEPAGE*/
 
+.gradient-top,
+.gradient-bottom {
+  position: relative;
+}
+
 .hp_bg{
     position: relative;
     background-image: url('Images/hp_bg.png');
@@ -96,6 +101,8 @@ html {
     min-height: 500px;   
 }
 
+.gradient-top::before,
+.gradient-bottom::after, 
 .hp_bg::before,
 .hp_bg::after,
 .big_banner::after {
@@ -104,24 +111,20 @@ html {
   left: 0;
   width: 100%;
   height: 15px;
-  pointer-events: none; /* <<< THIS prevents ghost clicks */
-  z-index: 0; /* Sit behind all your content */
-  
+  pointer-events: none; /* prevent ghost clicks */
+  z-index: 0; /* behind all content */
 }
 
-.hp_bg::before {
+.gradient-top::before, .hp_bg::after {
   top: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
 }
 
-.hp_bg::after, .big_banner::after {
+.gradient-bottom::after, .hp_bg::before, .big_banner::after {
   bottom: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
 }
 
-.hp_bg.last-section::after {
-  background: none;
-}
 
 
 .feature_column {
@@ -165,6 +168,7 @@ html {
     background: linear-gradient(#d66699, #d62976, #d66e29, #962fbf, #4f5bd5);
     border-radius: 50%;
     padding: 4px;
+    margin: 0 10px;
     display: inline-block;
     transition: transform 0.4s ease;  
 }
@@ -194,6 +198,7 @@ html {
 
 .card {
     border-radius: 0.25rem; /* Matches Bootstrap's `rounded-3` */
+    height: 100%;
 }
 .col {
     border-radius: 0.5rem; /* Matches Bootstrap's `rounded-3` */
@@ -213,6 +218,63 @@ html {
     height: 1px;
     background-color: white;
     flex-grow: 1;
+}
+
+/*ROLES*/
+
+.role-item {
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin: 8px 0;
+}
+
+.role-layout {
+    display: flex;
+    align-items: center;
+}
+
+.role-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    user-select: none;
+}
+  
+.role-name {
+    flex-grow: 1;
+    margin-left: 24px;
+    font-size: 16px;
+    user-select: none;
+}
+
+.role-content {
+    display: flex;
+    padding: 5%;
+}
+
+.role {
+    display: inline-block;
+    padding: 2px 6px;
+    margin: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    background-color: #5865F2; /* Discord blurple */
+    color: white;
+    font-family: 'gg sans', 'Noto Sans', sans-serif;
+  }
+  
+.down-arrow {
+    color: #aaa;
+    transition: transform 0.3s ease;
+}
+
+.down-arrow:hover {
+    transform: translateY(5px) scale(1.2);
+}
+
+.accordion-header[aria-expanded="true"] .down-arrow {
+    transform: rotate(180deg); /* Rotate 180 degrees when the accordion is open */
 }
 
 /*DISCORD WIDGETS*/
@@ -378,6 +440,11 @@ hr {
     margin: 4px 0;
     border: none;
     border-top: 1px solid #e0e0e0;
+}
+
+.white-line {
+    border: 0;
+    border-top: 2px solid #dbdee1;
 }
 
 .status-dot {
@@ -681,6 +748,13 @@ a {
     
 }
 
+.roles_bg {
+    background-image: url("Images/roles_bg.gif");
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover; /* optional, but often useful */
+}
+
 .star_img {
     height: 30px;
     width: auto; 
@@ -718,7 +792,10 @@ a {
     height: 32px; /* Adjust height of the image */
     object-fit: contain; /* Ensures the image keeps its aspect ratio */
 }
-  
+
+.timer_img {
+margin: 0 6px;
+}
 
 
 /*BLOGS*/
@@ -726,7 +803,6 @@ a {
 .card {
     background-color:#1e1f22;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-    height: 100%;
     border-radius: 0.75rem 0.75rem;
 }
 
@@ -748,7 +824,7 @@ a {
 
 
 
-.card-title, .card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text, .bio_text, .hero-text, blockquote, .badge, .discord-text {
+.card-title, .card-text, .profile_text, .blog_subtitle, .blog_text, .blog_parter, .blog_extras, .text, .bio_text, .hero-text, blockquote, .badge, .discord-text, .role-item {
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -760,7 +836,7 @@ a {
     color: #B9BBBE;
 }
 
-.blog_parter, .blog_subtitle, .blog_extras-text, .card-title, .event-item h4 {
+.blog_parter, .blog_subtitle, .blog_extras-text, .card-title, .event-item h4, .role-name {
     color: #dbdee1;
 }
 
@@ -777,7 +853,7 @@ a {
     
 .blog_parter {
     margin-bottom: 2%; 
-    font-weight: 750;
+    font-weight: 500;
     font-size: 36px;     
 }
     
@@ -822,23 +898,14 @@ a {
     position: relative;
 }
 
-.indicator {
-    position: absolute;
-    right: 100%; /* Places it right next to the TOC */
-    top: 0; /* Initially, it will start from the top, but it will move dynamically */
-    width: 4px;
-    height: 22px;
-    background-color: #ffffff; /* Red or any color you prefer */
-    opacity: 0; /* Initially invisible */
-    transition: top 0.3s, opacity 0.3s; /* Smooth transition for movement and opacity change */
-}
+
 
 
 /* SHOP */
 
 /* Minimal Custom Styling */
 .hero {
-    height: 100vh;
+    height: calc(100vh - 96px);
     color: white;
     display: flex;
     flex-direction: column;
@@ -905,7 +972,7 @@ footer .instagram_logo {
     background-image: url("Images/instagram.png");
     background-repeat: none;
     background-size: cover;
-    margin: 0.5%;
+    margin: 10px;
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -915,7 +982,7 @@ footer .discord_logo {
     background-image: url("Images/discord.png");
     background-repeat: none;
     background-size: cover;
-    margin: 0.5%;
+    margin: 8px;
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -1042,6 +1109,16 @@ footer .discord_logo {
         display: none;
     }
 
+    .audio_img {
+        display: none;
+    }
+
+    .story-image {
+        width: 80px;
+        height: 80px;
+        
+    }
+
     .span-btn {
         font-size: 0.85rem;
         padding: 12px 12px;
@@ -1079,6 +1156,21 @@ footer .discord_logo {
 
     .quick-links{
         gap: 0rem; /* No gap for very small screens */
+    }
+
+    .blog_subtitle {
+        margin-top: 8%;
+        margin-bottom: 6%;
+        font-size: 24px;
+    }
+    .blog_parter {
+        margin-top: 16%;
+        margin-bottom: 6%;
+        font-size: 24px;
+    }
+
+    .blog_text{
+        font-size: 1rem;
     }
 }
 
