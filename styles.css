@@ -9,6 +9,7 @@ body {
     background-position: center; 
 }
 
+
 section, main, blog, blog_m {
     background-color: rgb(22, 22, 22); 
     
@@ -26,7 +27,7 @@ blog_m {
     padding: 1.25rem;
 }
 
-blog, main {
+blog {
     padding: 5% 15%; 
 }
 
@@ -54,6 +55,19 @@ blog, main {
     z-index: 1;    
 }
 
+h2 {
+    margin-bottom: 3rem;
+}
+
+h5 {
+    margin-bottom: 2rem;
+}
+
+/* Highlighted Bullet Points */
+.highlight-text {
+    color: #b191d8;  /* A lively green to make the points pop */
+}
+
 /*NAV*/
 
 /*Nav displacement*/
@@ -69,8 +83,18 @@ html {
 
 .navbar {
     transition: transform 0.4s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+.navbar-toggler, .navbar-toggler:focus {
+    border:none;
+    box-shadow: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-toggler:active {
+    transform: scale(1.09);
+}
 
 
 
@@ -117,12 +141,12 @@ html {
 
 .gradient-top::before, .hp_bg::after {
   top: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
 }
 
 .gradient-bottom::after, .hp_bg::before, .big_banner::after {
   bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
 }
 
 
@@ -197,9 +221,12 @@ html {
 }
 
 .card {
-    border-radius: 0.25rem; /* Matches Bootstrap's `rounded-3` */
     height: 100%;
+    background-color:#1e1f22;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem 0.75rem;
 }
+
 .col {
     border-radius: 0.5rem; /* Matches Bootstrap's `rounded-3` */
 }
@@ -221,6 +248,13 @@ html {
 }
 
 /*ROLES*/
+
+.role-card {
+    border-radius: 0.25rem; /* Matches Bootstrap's `rounded-3` */
+    background-color:#1e1f22;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem 0.75rem;
+}
 
 .role-item {
     padding: 14px 20px;
@@ -331,7 +365,7 @@ html {
     margin: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    height: auto;
+    height: 235px;
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -800,18 +834,11 @@ margin: 0 6px;
 
 /*BLOGS*/
 
-.card {
-    background-color:#1e1f22;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 0.75rem 0.75rem;
-}
-
 .card-title {
     font-weight: 600;
     font-size: 28px;
     
 }
-
 
 .card-img-top {
     border-radius: 0.45rem 0.45rem 0 0; /* Rounded corners only on the top */
@@ -1012,7 +1039,7 @@ footer .discord_logo {
 
 
 .logobw_img {
-    width: 70px;
+    width: 150px;
     height: auto;
 }
 
@@ -1023,6 +1050,7 @@ footer .discord_logo {
     align-items: center;
     justify-content: center;     
     cursor: pointer;
+    opacity: 70%;
 }
   
 .logo:hover strong {
@@ -1096,9 +1124,12 @@ footer .discord_logo {
 
 
 @media screen and (max-width: 767px) {
-    
-    blog_m{
-        padding:  1rem;
+    blog_m, blog, main {
+        padding: 1.5rem;
+    }
+
+    .category-all {
+        padding: 0;
     }
     
     .blog_text {

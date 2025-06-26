@@ -13,8 +13,7 @@
         <header class="container-fluid px-0">
             <div class="d-flex align-items-center">
                 <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                    <img src="../Images/logo.png" alt="Logo" width="80" height="54" class="d-inline-block align-text-center">
-                    <strong class="ms-2 fs-4" style="line-height: 0.9;">KMA's<br>DOMAIN</strong>
+                    <img src="../Images/logo.gif" alt="Logo" width=150 height=55 class="d-inline-block align-text-center">
                 </a>
                 <img src="../Images/noaudio.png" class="px-2 audio_img" alt="Audio"  id="toggleImage">
             </div>
@@ -49,7 +48,7 @@
     </div>
 
     <!-- Timeline Section -->
-    <section id="timeline" class="py-5 gradient-bottom">
+    <main id="timeline" class="py-5 gradient-bottom">
       <div class="container position-relative">
         <div class="container px-4 pt-5 pb-5 text-white">
             <div class="row">
@@ -60,229 +59,260 @@
                 </div>
             </div>
         </div> 
-        <div class="col-xxl-4 col-lg-5 col-md-7 accordion" id="rolesAccordion">
+        
+        <div class="row justify-content-between">
+            <!-- Left Column: Title and Description -->
+            <div class="col-xl-5 col-lg-12 p-0">
+                <h2 class="fw-bold text-white text-uppercase">Role Levels</h2>
 
-            <div class="card rounded role-item">
-    
-                <!-- Accordion Header -->
-                <div class="role-layout accordion-header"
-                     id="heading-1"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-1"
-                     aria-expanded="false"
-                     aria-controls="collapse-1"
-                     style="cursor: pointer;">
-                     
-                    <img src="../Images/babyyodastan.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Baby Yoda Stan</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
+                <!-- Leveling Up Section -->
+                <div class="text mb-5">
+                    <h5 class="highlight-text">Leveling Up │ Earn Roles and Boost Your Experience</h5>
+                    <p>Leveling roles are all about celebrating your engagement and achievements. The more you interact and participate, the higher you climb in our community ranks. Each role signifies your dedication and it’s our way of saying thanks for being an active part of our community!</p>
                 </div>
-            
-                <!-- Accordion Body (now outside the header) -->
-                <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level │ 1–10</p>
-                            <p class="text fst-italic px-4">A newcomer just starting to embrace the chaos. Cute and eager to stir things up.</p>
-                            <div class="role" style="background-color: rgba(42, 202, 42, 0.13); color:rgb(6, 168, 6);">@Baby Yoda Stan</div>
-                            <code>/fortune</code>
-                            <code>/coinflip</code>
-                            <code>/motivate</code>
-                            <code>/advice</code>
-                            <code>/quote</code> 
-                        </div>
+
+                <div class="text mb-5">
+                    <h5 class="highlight-text">How It Works</h5>
+                    <p> ➤ <strong>Chat & Connect —</strong> Every message you send helps you gain experience points (XP). More activity means more XP! <br><br>
+                        ➤ <strong>Roles —</strong> As you accumulate XP, you'll unlock new roles that showcase your progress and contributions.<br><br>
+                        ➤ <strong>Perks —</strong> As you progress through the levels, you’ll unlock exclusive secret commands and perks unique to each role.<br><br>
+                    </p>
+                </div>
+
+                <!-- Progress Bar
+                <div class="progress-bar-container text">
+                    <span>Progress: 45%</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 45%;"></div>
                     </div>
-                </div>
-              
+                </div>-->
+
             </div>
 
-            <div class="card rounded role-item">
-                <div class="role-layout accordion-header"
-                     id="heading-2"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-2"
-                     aria-expanded="false"
-                     aria-controls="collapse-2"
-                     style="cursor: pointer;">
+            <div class="col-xl-6 col-lg-12 accordion" id="rolesAccordion">
+
+                <div class="role-card rounded role-item">
+        
+                    <!-- Accordion Header -->
+                    <div class="role-layout accordion-header"
+                        id="heading-1"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-1"
+                        aria-expanded="false"
+                        aria-controls="collapse-1"
+                        style="cursor: pointer;">
+                        
+                        <img src="../Images/babyyodastan.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Baby Yoda Stan</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>
+                
+                    <!-- Accordion Body (now outside the header) -->
+                    <div id="collapse-1" class="accordion-collapse collapse" aria-labelledby="heading-1" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level │ 1–10</p>
+                                <p class="text fst-italic px-4">A newcomer just starting to embrace the chaos. Cute and eager to stir things up.</p>
+                                <div class="role" style="background-color: rgba(42, 202, 42, 0.13); color:rgb(6, 168, 6);">@Baby Yoda Stan</div>
+                                <code>/fortune</code>
+                                <code>/coinflip</code>
+                                <code>/motivate</code>
+                                <code>/advice</code>
+                                <code>/quote</code> 
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <div class="role-card rounded role-item">
+                    <div class="role-layout accordion-header"
+                        id="heading-2"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-2"
+                        aria-expanded="false"
+                        aria-controls="collapse-2"
+                        style="cursor: pointer;">
+                        
+                        <img src="../Images/rogueshitposter.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Rogue Sh*t Poster</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>  
                     
-                    <img src="../Images/rogueshitposter.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Rogue Sh*t Poster</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>  
-                
-                <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level |  11-20</p>
-                            <p class="text fst-italic px-4">Known for their unpredictable and irreverent posts that make waves and stir the pot.</p>
-                            <div class="role" style="background-color: rgba(186, 202, 42, 0.13); color:rgb(189, 186, 9);">@Rogue Sh*t Poster</div>
-                            <code>/funfact</code>
-                            <code>/meme</code>
-                            <code>/rps</code>
-                            <code>/image</code>
-                            <code>/translate</code> 
+                    <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level |  11-20</p>
+                                <p class="text fst-italic px-4">Known for their unpredictable and irreverent posts that make waves and stir the pot.</p>
+                                <div class="role" style="background-color: rgba(186, 202, 42, 0.13); color:rgb(189, 186, 9);">@Rogue Sh*t Poster</div>
+                                <code>/funfact</code>
+                                <code>/meme</code>
+                                <code>/rps</code>
+                                <code>/image</code>
+                                <code>/translate</code> 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card rounded role-item">
-                <div class="role-layout accordion-header"
-                     id="heading-3"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-3"
-                     aria-expanded="false"
-                     aria-controls="collapse-3"
-                     style="cursor: pointer;">
+                <div class="role-card rounded role-item">
+                    <div class="role-layout accordion-header"
+                        id="heading-3"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-3"
+                        aria-expanded="false"
+                        aria-controls="collapse-3"
+                        style="cursor: pointer;">
 
-                    <img src="../Images/havocherald.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Havoc Herald</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>   
+                        <img src="../Images/havocherald.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Havoc Herald</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>   
 
-                <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level |  21-30</p>
-                            <p class="text fst-italic px-4">The one who announces and spreads chaos, ensuring the disruption reaches everyone.</p>
-                            <div class="role" style="background-color: rgba(42, 202, 189, 0.13); color:rgb(9, 189, 165);">@Havoc Herald</div>
-                            <code>Ayako's Interactions</code>
-                            <code>Cookie's Interactions</code>
-                            <code>/suggest</code>
-                            <code>/rate</code>
-                            <code>/weather</code> 
+                    <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level |  21-30</p>
+                                <p class="text fst-italic px-4">The one who announces and spreads chaos, ensuring the disruption reaches everyone.</p>
+                                <div class="role" style="background-color: rgba(42, 202, 189, 0.13); color:rgb(9, 189, 165);">@Havoc Herald</div>
+                                <code>Ayako's Interactions</code>
+                                <code>Cookie's Interactions</code>
+                                <code>/suggest</code>
+                                <code>/rate</code>
+                                <code>/weather</code> 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card rounded role-item">
-                <div class="role-layout accordion-header"
-                     id="heading-4"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-4"
-                     aria-expanded="false"
-                     aria-controls="collapse-4"
-                     style="cursor: pointer;">
-                     
-                    <img src="../Images/darkangel.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Dark Angel</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>  
-                
-                <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level |  31-50</p>
-                            <p class="text fst-italic px-4">Creates a storm wherever they go, leaving an impact with wild and uncontrollable behavior.</p>
-                            <div class="role" style="background-color: rgba(42, 117, 202, 0.13); color:rgb(9, 123, 189);">@Dark Angel</div>
-                            <code>/music</code>
-                            <code>/lyrics</code>
-                            <code>/gamify</code>
-                            <code>/shop</code>
+                <div class="role-card rounded role-item">
+                    <div class="role-layout accordion-header"
+                        id="heading-4"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-4"
+                        aria-expanded="false"
+                        aria-controls="collapse-4"
+                        style="cursor: pointer;">
+                        
+                        <img src="../Images/darkangel.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Dark Angel</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>  
+                    
+                    <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level |  31-50</p>
+                                <p class="text fst-italic px-4">Creates a storm wherever they go, leaving an impact with wild and uncontrollable behavior.</p>
+                                <div class="role" style="background-color: rgba(42, 117, 202, 0.13); color:rgb(9, 123, 189);">@Dark Angel</div>
+                                <code>/music</code>
+                                <code>/lyrics</code>
+                                <code>/gamify</code>
+                                <code>/shop</code>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card rounded role-item">
-                <div class="role-layout accordion-header"
-                     id="heading-5"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-5"
-                     aria-expanded="false"
-                     aria-controls="collapse-5"
-                     style="cursor: pointer;">
+                <div class="role-card rounded role-item">
+                    <div class="role-layout accordion-header"
+                        id="heading-5"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-5"
+                        aria-expanded="false"
+                        aria-controls="collapse-5"
+                        style="cursor: pointer;">
 
-                    <img src="../Images/feralfuck.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Feral F*uck</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>  
-                
-                <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level |  51-80</p>
-                            <p class="text fst-italic px-4">Untamed and wild, bringing thrilling and disruptive chaos wherever they roam.</p>
-                            <div class="role" style="background-color: rgba(202, 151, 42, 0.13); color:rgb(189, 126, 9);">@Feral F*ck</div>
-                            <code>/mail</code>
-                            <code>/vault</code>
-                            <code>/embed</code>
+                        <img src="../Images/feralfuck.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Feral F*uck</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>  
+                    
+                    <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level |  51-80</p>
+                                <p class="text fst-italic px-4">Untamed and wild, bringing thrilling and disruptive chaos wherever they roam.</p>
+                                <div class="role" style="background-color: rgba(202, 151, 42, 0.13); color:rgb(189, 126, 9);">@Feral F*ck</div>
+                                <code>/mail</code>
+                                <code>/vault</code>
+                                <code>/embed</code>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card rounded role-item">
-                <div class="role-layout accordion-header"
-                     id="heading-6"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-6"
-                     aria-expanded="false"
-                     aria-controls="collapse-6"
-                     style="cursor: pointer;">
+                <div class="role-card rounded role-item">
+                    <div class="role-layout accordion-header"
+                        id="heading-6"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-6"
+                        aria-expanded="false"
+                        aria-controls="collapse-6"
+                        style="cursor: pointer;">
 
-                    <img src="../Images/edgelord.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Edgelord</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div> 
-                
-                <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level |  81-100</p>
-                            <p class="text fst-italic px-4">Master of edgy humor and controversial takes, walking the fine line of provocation.</p>
-                            <div class="role" style="background-color: rgba(202, 47, 42, 0.13); color:rgb(189, 36, 9);">@Edgelord</div>
-                            <code>/customsound</code>
-                            <code>/createnick</code>
-                            <code>/shopgift</code>
+                        <img src="../Images/edgelord.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Edgelord</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div> 
+                    
+                    <div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level |  81-100</p>
+                                <p class="text fst-italic px-4">Master of edgy humor and controversial takes, walking the fine line of provocation.</p>
+                                <div class="role" style="background-color: rgba(202, 47, 42, 0.13); color:rgb(189, 36, 9);">@Edgelord</div>
+                                <code>/customsound</code>
+                                <code>/createnick</code>
+                                <code>/shopgift</code>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="card rounded role-item">
-                <div class="role-layout accordion-header"
-                     id="heading-7"
-                     data-bs-toggle="collapse"
-                     data-bs-target="#collapse-7"
-                     aria-expanded="false"
-                     aria-controls="collapse-7"
-                     style="cursor: pointer;">
+                <div class="role-card rounded role-item">
+                    <div class="role-layout accordion-header"
+                        id="heading-7"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapse-7"
+                        aria-expanded="false"
+                        aria-controls="collapse-7"
+                        style="cursor: pointer;">
 
-                    <img src="../Images/royalmadness.webp" alt="Role Icon" class="role-icon">
-                    <div class="role-name"><strong>Royal Madness</strong></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
-                    </svg>
-                </div>  
+                        <img src="../Images/royalmadness.webp" alt="Role Icon" class="role-icon">
+                        <div class="role-name"><strong>Royal Madness</strong></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="down-arrow" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </div>  
 
-                <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#rolesAccordion">
-                    <div class="role-content">
-                        <div class="d-flex flex-column align-items-center justify-content-center text-center">
-                            <p class="card-title fs-5">Level |  100+</p>
-                            <p class="text fst-italic px-4">The supreme ruler of chaos, combining regal authority with an unpredictable and chaotic streak.</p>
-                            <div class="role" style="background-color: rgba(143, 42, 202, 0.13); color:rgb(123, 9, 189);">@Royal Madness</div>
-                            <code>/nickcolor</code>
-                            <code>/adventure</code>
+                    <div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#rolesAccordion">
+                        <div class="role-content">
+                            <div class="d-flex flex-column align-items-center justify-content-center text-center">
+                                <p class="card-title fs-5">Level |  100+</p>
+                                <p class="text fst-italic px-4">The supreme ruler of chaos, combining regal authority with an unpredictable and chaotic streak.</p>
+                                <div class="role" style="background-color: rgba(143, 42, 202, 0.13); color:rgb(123, 9, 189);">@Royal Madness</div>
+                                <code>/nickcolor</code>
+                                <code>/adventure</code>
+                            </div>
                         </div>
-                    </div>
-                </div> 
+                    </div> 
+                </div>
             </div>
         </div>
-    </section>  
+    </main>  
 
     <section class="quick-links">
         <a href="#">FAQ</a>
@@ -301,8 +331,7 @@
     
           <div class="mb-5 mt-3">
             <a class="logo" href="index.html" style="text-align: left;">
-              <img src="../Images/logob&w.png" id="logo-img" class="logobw_img" alt="Logo">
-              <strong class="ms-2 fs-5" style="line-height: 0.9; margin: 0; text-align: left;">KMA's<br>DOMAIN</strong>
+              <img src="../Images/logo.gif" id="logo-img" class="logobw_img" alt="Logo">
             </a>
             <p style="cursor:default; user-select: none;">&copy; <span id="year"></span> KMA. All rights reserved. Unauthorized use is prohibited.</p>
           </div>
