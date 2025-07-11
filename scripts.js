@@ -72,34 +72,6 @@ function copyToClipboard() {
 }
 
 
-// MUSIC
-
-// Get the image and audio elements
-//const audioImage = document.querySelector('.audio_img');
-//const audioPlayer = document.getElementById('audioPlayer');
-
-// Toggle play/pause on image click
-//audioImage.addEventListener('click', () => {
-//    if (audioPlayer.paused) {
-//        audioPlayer.play();
-//    } else {
-//        audioPlayer.pause();
-//    }
-// });
-
-//const toggleImage = document.getElementById('toggleImage');
-
-// Define the two image sources
-//const image1 = 'Images/noaudio.png';
-//const image2 = 'Images/audio.png';
-
-// Add click event listener
-//toggleImage.addEventListener('click', () => {
-// Check current image source and switch
-//toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
-//});
-
-
 
 //MUSIC 2
 
