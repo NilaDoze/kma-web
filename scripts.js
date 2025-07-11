@@ -1,3 +1,21 @@
+//const searchInput = document.getElementById('faqSearch');
+//const faqCards = document.querySelectorAll('.faq-card');
+
+//searchInput.addEventListener('input', () => {
+  //const query = searchInput.value.toLowerCase();
+//
+  //faqCards.forEach(card => {
+    //const title = card.getAttribute('data-title').toLowerCase();
+    //card.style.display = title.includes(query) ? 'block' : 'none';
+  //});
+//});
+
+
+
+
+
+// NAVBAR SCROLL
+
 let prevScroll = window.scrollY;
 const navbar = document.getElementById('smartNavbar');
 let scrollDelta = 0;
@@ -24,6 +42,7 @@ window.addEventListener('scroll', () => {
     prevScroll = currentScroll;
 });
 
+// ARTWALL LINKS 
 
 function handleShareClick(event, url) {
     // Stop the event from propagating (prevents the card's click handler)
@@ -53,32 +72,130 @@ function copyToClipboard() {
 }
 
 
-
+// MUSIC
 
 // Get the image and audio elements
-const audioImage = document.querySelector('.audio_img');
-const audioPlayer = document.getElementById('audioPlayer');
+//const audioImage = document.querySelector('.audio_img');
+//const audioPlayer = document.getElementById('audioPlayer');
 
 // Toggle play/pause on image click
-audioImage.addEventListener('click', () => {
-    if (audioPlayer.paused) {
-        audioPlayer.play();
-    } else {
-        audioPlayer.pause();
-    }
-});
+//audioImage.addEventListener('click', () => {
+//    if (audioPlayer.paused) {
+//        audioPlayer.play();
+//    } else {
+//        audioPlayer.pause();
+//    }
+// });
 
-const toggleImage = document.getElementById('toggleImage');
+//const toggleImage = document.getElementById('toggleImage');
 
 // Define the two image sources
-const image1 = 'Images/noaudio.png';
-const image2 = 'Images/audio.png';
+//const image1 = 'Images/noaudio.png';
+//const image2 = 'Images/audio.png';
 
 // Add click event listener
-toggleImage.addEventListener('click', () => {
+//toggleImage.addEventListener('click', () => {
 // Check current image source and switch
-toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
+//toggleImage.src = toggleImage.src.includes(image1) ? image2 : image1;
+//});
+
+
+
+//MUSIC 2
+
+document.addEventListener('DOMContentLoaded', () => {
+  const players = document.querySelectorAll('.audio-wrapper');
+
+  players.forEach((player) => {
+    const audio = player.querySelector('.audio');
+    const playButton = player.querySelector('.play-button');
+    const toggleImage = player.querySelector('.toggle-image');
+    const progressContainer = player.querySelector('.progress-container');
+    const progressBar = player.querySelector('.progress');
+    const progressHandle = player.querySelector('.progress-handle');
+    const currentTimeEl = player.querySelector('.current-time');
+    const durationEl = player.querySelector('.duration');
+
+    const imagePlay = '../Images/playbutton.png';
+    const imagePause = '../Images/pausebutton.png';
+    let isDragging = false;
+
+    // ✅ Init visuals to 0
+    progressBar.style.width = '0%';
+    progressHandle.style.left = '0%';
+    if (currentTimeEl) currentTimeEl.textContent = '0:00';
+
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+      return `${minutes}:${secs}`;
+    }
+
+    function updateProgressBar() {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = `${percent}%`;
+      progressHandle.style.left = `${percent}%`;
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+    }
+
+    function seekAudio(e) {
+      const rect = progressContainer.getBoundingClientRect();
+      const offsetX = Math.min(Math.max(e.clientX - rect.left, 0), rect.width);
+      const percent = offsetX / rect.width;
+      audio.currentTime = percent * audio.duration;
+    }
+
+    playButton.addEventListener('click', () => {
+      if (audio.paused) {
+        // Pause all other players first
+        players.forEach(p => {
+          const otherAudio = p.querySelector('.audio');
+          const otherImage = p.querySelector('.toggle-image');
+          if (otherAudio !== audio) {
+            otherAudio.pause();
+            otherImage.src = imagePlay;
+          }
+        });
+
+        audio.play();
+        toggleImage.src = imagePause;
+      } else {
+        audio.pause();
+        toggleImage.src = imagePlay;
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      toggleImage.src = imagePlay;
+    });
+
+    audio.addEventListener('loadedmetadata', () => {
+      durationEl.textContent = formatTime(audio.duration);
+      currentTimeEl.textContent = '0:00';
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!isDragging) updateProgressBar();
+    });
+
+    progressContainer.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      seekAudio(e);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) seekAudio(e);
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+  });
 });
+
+
+
+// SEARCH FILTER
 
 function filterByCategory(category) {
     // Get all blog blocks
@@ -111,6 +228,9 @@ function filterByCategory(category) {
     const clickedButton = document.getElementById(`category-${category}`);
     clickedButton.classList.add('active');
 }
+
+
+// SERVER EVENTS
 
 const serverId = '1244644562451042404';
 const widgetUrl = `https://discord.com/api/guilds/${serverId}/widget.json`;

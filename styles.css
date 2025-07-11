@@ -33,7 +33,7 @@ blog {
 
 .small_banner {
     height: 300px;
-    background-color: rgb(122, 52, 105);
+    background-color: #831a5c;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +47,7 @@ blog {
     position: relative;
     width: 100%;
     height: 300px; /* Keeps it compact */
-    background-image: url('Images/big_banner.png');
+    background-image: url('Images/big_banner3.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -55,13 +55,7 @@ blog {
     z-index: 1;    
 }
 
-h2 {
-    margin-bottom: 3rem;
-}
 
-h5 {
-    margin-bottom: 2rem;
-}
 
 /* Highlighted Bullet Points */
 .highlight-text {
@@ -84,6 +78,7 @@ html {
 .navbar {
     transition: transform 0.4s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    user-select: none; 
 }
 
 .navbar-toggler, .navbar-toggler:focus {
@@ -165,6 +160,7 @@ html {
     background-color: rgba(0, 0, 0, 0.4); /* Background color for the column itself */
     background-position: center;
     background-size: cover;
+    user-select: none;
 }
 
 .content {
@@ -187,6 +183,8 @@ html {
 .feature_column:hover {
     transform: scale(0.985); /* Optional scaling effect on hover */
 }
+
+
     
 .story-ring {
     background: linear-gradient(#d66699, #d62976, #d66e29, #962fbf, #4f5bd5);
@@ -205,7 +203,7 @@ html {
     background-position: center;
     border: 4px solid rgb(22, 22, 22); /* white border directly on the image */
     display: flex;
-  }
+}
 
   .img1 { background-image: url('Images/aboutus.png'); }
   .img2 { background-image: url('Images/levelup.png'); }
@@ -214,6 +212,7 @@ html {
 
 .story-text {
     margin-top: 0.5rem;
+    user-select: none;
 }
 
 .story-ring:hover {
@@ -225,6 +224,10 @@ html {
     background-color:#1e1f22;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 0.75rem 0.75rem;
+}
+
+.card-square {
+  aspect-ratio: 1 / 1;
 }
 
 .col {
@@ -296,7 +299,7 @@ html {
     background-color: #5865F2; /* Discord blurple */
     color: white;
     font-family: 'gg sans', 'Noto Sans', sans-serif;
-  }
+}
   
 .down-arrow {
     color: #aaa;
@@ -310,6 +313,60 @@ html {
 .accordion-header[aria-expanded="true"] .down-arrow {
     transform: rotate(180deg); /* Rotate 180 degrees when the accordion is open */
 }
+
+/*ACCORDION*/
+.accordion-title {
+    margin: 0 15px 0 0;
+}
+/*FAQ ACCORDION*/
+/* Optional: smooth dark border for accordion items */
+  #FAQaccordion .accordion-item {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0.75rem 0.75rem;
+    border-color: rgb(22, 22, 22);
+    
+  }
+  #FAQaccordion .accordion-button {
+    background-color:#1e1f22;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 24px 20px;
+    color: #dbdee1;
+    user-select: none;
+  }
+  #FAQaccordion .accordion-button:not(.collapsed) {
+    background-color:#1e1f22;
+  }
+  #FAQaccordion .accordion-body {
+    background-color: #232327;
+    font-size: 16px;
+}
+
+
+
+#FAQaccordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='%23AAAAAA' viewBox='0 0 16 16'%3e%3cpath fill-rule='evenodd' d='M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Remove focus/active ring and box-shadow */
+
+#FAQaccordion .accordion-button:focus,
+#FAQaccordion .accordion-button:active,
+#FAQaccordion .accordion-button:not(.collapsed):focus,
+#FAQaccordion .accordion-button:not(.collapsed):active {
+    box-shadow: none;
+    outline: none;
+}
+
+#FAQaccordion .accordion-body::selection {
+    background-color: #555;
+    color: #ddd;
+}
+
+
 
 /*DISCORD WIDGETS*/
 
@@ -340,7 +397,8 @@ html {
 }
 
 .discord-widget-top {
-    width: 300px;   
+    width: 300px; 
+    user-select: none;  
 }
 
 .discord-widget-top-event {
@@ -373,10 +431,17 @@ html {
     width: 300px;
 }
 
+.discord-widget-content::selection, .discord-widget-content-event::selection {
+  background-color: #555;
+}
+
 .discord-widget-content-event, .discord-widget-top-event {
     width: 400px;
 }
 
+.discord-widget-top-event {
+    user-select: none;
+}
 
 .server-icon {
     width: 50px;
@@ -585,12 +650,12 @@ hr {
 
 /*Nav underlined*/
 .nav-link {
-    padding: 5px 0 !important;   
+    padding: 5px 0 !important;  
 }
 
 .nav-item {
     padding: 0 !important;
-    margin: 0 10px;
+    margin: 0 18px;
     border-bottom: 3px solid transparent;
     border-radius: 5%;
     transition: border-color 0.3s;
@@ -599,7 +664,6 @@ hr {
     width:60%;
     border-bottom-color: rgb(255, 255, 255); /* Change this to any color you prefer */
 }   
-
 
 /* Gradient Bottom .carousel_section */
 .carousel_section {
@@ -753,6 +817,19 @@ a {
 
 /*IMAGES*/
 
+.centered-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* keeps aspect ratio */
+  margin: 20px auto;       /* centers horizontally */
+}
+
+.helpcenter-bg {
+    background-image: url(Images/hp_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Covers width only */
+}
+
 .audio_img {
     height: 30px;
     width: 60px; 
@@ -855,11 +932,15 @@ margin: 0 6px;
     font-family: 'Segoe UI', sans-serif;
 }
 
+.text, .bio_text, .blog_text, .blog_extras, .discord-text, .card-text {
+    line-height: 1.7rem;
+}
+
 .profile_text {
     color: rgb(116, 116, 116);
 }
 
-.text, .bio_text, .blog_text, .discord-text, .card-text, .event-item p {
+.text, .bio_text, .blog_text, .discord-text, .card-text, .event-item p, .accordion-body {
     color: #B9BBBE;
 }
 
@@ -867,14 +948,37 @@ margin: 0 6px;
     color: #dbdee1;
 }
 
-.blog_title, .blog_extras-title, .blog_extras-subtitle, .story-text {
+.blog_title, .blog_extras-title, .blog_extras-subtitle, .story-text, .separator-text {
     color: #ffffff;
+}
+
+.text::selection, .bio_text::selection, .card-text::selection, .blog_text::selection, .blog_extras-text::selection, .toc-item::selection, p::selection {
+    background-color: #555;
+}
+
+.separator-text {
+    font-weight: 400;
+    margin: 0 10px;
+}
+h1, h2, h3, h4, h5, .hero-title, .card-title, .blog_title, .blog_subtitle, .blog_parter, img, .btn, .btn-join, .pink-btn, .book-title, .book-author, .badge, .overlay-text, .separator-text {
+    user-select: none;
+}
+
+h2 {
+    margin-bottom: 50px;
+}
+
+h3 {
+    margin-bottom: 44px;
+}
+
+h4 {
+    margin-bottom: 24px;
 }
 
 
 .bio_text {
     padding: 0 30%;
-    font-size: 15px;
 }
 
     
@@ -886,7 +990,9 @@ margin: 0 6px;
     
 .blog_subtitle {
     margin-bottom: 2%;
+    margin-top: 42px;
     font-size: 42px;
+    font-weight: 400;
 }
 
 .blog_text{
@@ -946,6 +1052,18 @@ margin: 0 6px;
 .hero-title {
     color: white;
     text-shadow: 2px 2px 10px rgba(255, 0, 98, 0.35);
+    text-transform: uppercase;
+    font-size: 2.5rem;       /* Approximate to Bootstrap's display-4 */
+    font-weight: 700;        /* Equivalent to fw-bold */
+}
+
+.hero-subtitle {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(255, 0, 98, 0.35);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 700;        /* Equivalent to fw-bold */
+    margin: 0.5rem 24px;    /* mt-2 */
 }
 
 .hero-text {
@@ -977,8 +1095,122 @@ margin: 0 6px;
 
 /*ARTWALL*/
 blockquote {
-    border-left: 6px solid #dbdee15d;
+    border-left: 6px solid #dbdee1;
     padding-left: 1rem;
+}
+
+/* Media Player */
+.audio-player {
+    background: rgb(22, 22, 22);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(146, 93, 115, 0.548);
+    padding: 2rem;
+    max-width: 500px;
+    margin: 2rem 0 5rem 0;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.controls h3 {
+    margin: 0;
+}
+
+.play-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fd0d9957;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin: 0 15px;
+    border: none;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background-color: #3a042a;
+}
+
+
+.track-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.track-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.progress-bar {
+    height: 6px;
+    background-color: #757575;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.progress {
+    height: 100%;
+    background-color: #fd0d9957;
+    border-radius: 3px;
+    width: 45%;
+    transition: width 0.1s linear;
+}
+
+.progress-handle {
+    width: 16px;
+    height: 16px;
+    background-color: #3a042a;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    transition: transform 0.2s ease;
+    pointer-events: auto;
+}
+
+.progress-handle:hover {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.time-info {
+    color: #6c757d;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee span {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /*FOOTER*/
@@ -988,6 +1220,7 @@ footer {
     color: rgba(177, 172, 172, 0.438);
     padding: 20px;
     text-align: center;
+    user-select: none; 
 }
 footer .social_media {
     display: flex;
@@ -1023,6 +1256,7 @@ footer .discord_logo {
     gap: 1rem; /* or use 4px, 8px, etc., depending on your spacing preference */
     margin: 30px 0; 
     transition: transform 0.2 ease-in;
+    user-select: none;
 }
 
 .quick-links a {
@@ -1170,10 +1404,6 @@ footer .discord_logo {
     .feature-title {
         font-size: 28px;
     }
-    
-    .small_banner{
-        height: 175px;
-    } 
 
     .big_banner {
         height: 150px;
@@ -1202,19 +1432,38 @@ footer .discord_logo {
 
     .blog_text{
         font-size: 1rem;
+        line-height: 1.75rem;
     }
+
+    .remove-card-on-mobile {
+        all: unset;
+        display: block;
+        padding: 0 !important;
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 992px) {
+  .card-square {
+    aspect-ratio: auto;
+    /* or just unset it */
+  }
+  
 }
 
 @media screen and (max-width: 500px) {
 
-.bio {
-    text-align: left;
-}
+    .bio {
+        text-align: left;
+    }
 
-.quick-links{
-    gap: 0rem; /* No gap for very small screens */
-    font-size: 14px;
-}
+    .quick-links{
+        gap: 0rem; /* No gap for very small screens */
+        font-size: 14px;
+    }
 
 
 }
