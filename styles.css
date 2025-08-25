@@ -665,6 +665,13 @@ hr {
     border-bottom-color: rgb(255, 255, 255); /* Change this to any color you prefer */
 }   
 
+/*Buttons*/
+
+.form-control:focus {
+    border-color:#69164b;
+    box-shadow: 0 0 0 0.25rem rgba(155, 1, 134, 0.25);
+}
+
 /* Gradient Bottom .carousel_section */
 .carousel_section {
     position: relative; /* Ensures positioning context for the gradient */
